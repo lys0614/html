@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이력서 양식 만들어보기</title>
+    <style>
+        table td{
+            border:solid 1px black;
+            width:100px;
+            height:50px;
+        }
+        #title{
+            background-color: cornflowerblue;
+            text-align: center;
+        }
+        #a{
+            border:solid 1px black;
+        }
+        #b{
+            text-align: center;
+        }
+        #school{
+            text-align: right;
+        }
+        #c{
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 문제1) 주어진 샘플대로 테이블 태그를 활용하여 이력서 양식 만들어보기 -->
+    <h1>입사지원서</h1>
+    <table width="205" border="1" align="right">
+        <tr>
+            <td>지원분야</td>
+            <td></td>
+        </tr>
+    </table>
+    <br><br><br><br><br><br>
+    <table id="a" width="1017">
+        <tr>
+            <td id="title" colspan="4">지원회사</td>
+            <td colspan="2"></td>
+            <td id="b" colspan="2">희망근무지</td>
+            <td colspan="2"></td>
+            <td id="b" colspan="2"rowspan="4"> 사진 </td>
+        </tr>
+        <tr>
+            <td id="title" colspan="4">희망직무</td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td id="title" colspan="4">성명</td>
+            <td colspan="2">(한글)</td>
+            <td colspan="2">(한자)</td>
+            <td colspan="2">(영문)</td>
+        </tr>
+        <tr>
+            <td id="title" colspan="4">주민등록번호</td>
+            <td colspan="6" align="right">만&nbsp;&nbsp;&nbsp;&nbsp;세</td>
+        </tr>
+        <tr>
+            <td id="title" colspan="4">연락처</td>
+            <td colspan="4">(휴대폰)</td>
+            <td colspan="4">(유선)</td>
+        </tr>
+    </table>
+    <br>
+    <table id="a">
+        <tr align="center">
+            <td id="title" rowspan="5"> 학력</td>
+            <td colspan="3"> 재학기간 </td>
+            <td colspan="4"> 학교 </td>
+            <td colspan="2"> 전공과목 </td>
+            <td> 취득 학점</td>
+            <td> 졸업 구분</td>
+            <td> 소재지 </td>
+        </tr>
+        <tr>
+            <td id="b" colspan="3">. &nbsp;&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</td>
+            <td id="school" colspan="4"> 고등학교&nbsp;&nbsp; </td>
+            <td colspan="2"></td>
+            <td align="right"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="b" colspan="3">. &nbsp;&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</td>
+            <td id="school" colspan="4"> 전 문 대&nbsp;&nbsp; </td>
+            <td colspan="2"></td>
+            <td align="right"> / 만점</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="b" colspan="3">. &nbsp;&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</td>
+            <td id="school" colspan="4"> 대 학 교&nbsp;&nbsp; <br><br>대 &nbsp;&nbsp;&nbsp;&nbsp;학&nbsp;&nbsp;<br><br>(신입, 편입 / 주간, 야간) </td>
+            <td colspan="2">(부 전 공) <br><br> (복수전공)</td>
+            <td align="right"> / 만점</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="b" colspan="3">. &nbsp;&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</td>
+            <td id="school" colspan="4"> 대 학 원 &nbsp;<br><br>(주간, 야간) </td>
+            <td colspan="2"></td>
+            <td align="right"> / 만점</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="title"></td>
+            <td id="b" colspan="3">. &nbsp;&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</td>
+            <td id="school" colspan="4"></td>
+            <td colspan="2"></td>
+            <td align="right"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="title" rowspan="3">외<br><br>국<br><br>어</td>
+            <td id="b"> 영어 </td>
+            <td id="b" colspan="2">상. 중. 하. </td>
+            <td colspan="3" rowspan="3"> TOEIC : <br><br>TOEFL : <br><br></td>
+            <td id="title" rowspan="3">자격<br>및<br>면허</td>
+            <td colspan="2"></td>
+            <td id="title">취&nbsp;&nbsp;미</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="b" colspan="2">상. 중. 하.</td>
+            <td colspan="2"></td>
+            <td id="title">특&nbsp;&nbsp;기</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="b" colspan="2">상. 중. 하.</td>
+            <td colspan="2"></td>
+            <td id="title">종&nbsp;&nbsp;교</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td id="title" rowspan="2">병역<br>사항</td>
+            <td id="b">군필여부</td>
+            <td colspan="3" id="b">필. 미필. 면제</td>
+            <td id="b">면제사유</td>
+            <td colspan="3"></td>
+            <td id="b">군별</td>
+            <td></td>
+            <td id="b">계급</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="b">복무기간</td>
+            <td colspan="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;년 &nbsp;&nbsp;&nbsp;&nbsp; 개월)</td>
+            <td id="b">역종</td>
+            <td></td>
+            <td id="b">병과</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="title" rowspan="5">경<br><br>력</td>
+            <td id="b" colspan="2">근무기간</td>
+            <td id="b" colspan="2">직장명</td>
+            <td id="b"> 최종직위</td>
+            <td id="b" colspan="2">담당업무</td>
+            <td id="b" colspan="2"> 월급여 </td>
+            <td id="b" colspan="3"> 이직사유</td>
+        </tr>
+        <tr>
+            <td id="b" colspan="2">~</td>
+            <td colspan="2"></td>
+            <td></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td id="b" colspan="2"></td>
+            <td colspan="2"></td>
+            <td></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td id="b" colspan="2">~</td>
+            <td colspan="2"></td>
+            <td></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td id="b" colspan="2">~</td>
+            <td colspan="2"></td>
+            <td></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td id="title" rowspan="2">우편<br>연락처</td>
+            <td id="b" colspan="2"> 주소 </td>
+            <td colspan="7"></td>
+            <td id="b">우편번호</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td id="b" colspan="2"> E-MAIL주소 </td>
+            <td colspan="10"></td>
+        </tr>
+    </table>
+    <div style="text-align: right;">위의 모든 기재사항은 사실과 다름없음을 확인합니다.&nbsp;&nbsp;&nbsp;&nbsp;년&nbsp;&nbsp;&nbsp;월&nbsp;&nbsp;&nbsp;일&nbsp;&nbsp;지원자&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</body>
+</html>
