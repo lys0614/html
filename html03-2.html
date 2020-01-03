@@ -36,13 +36,92 @@
 
 
     <p>절대경로 활용 = C:\multi604\html\images\002.jpg<br>
-        <img src="C:\multi604\html\images\002.jpg" alt="절대경로" width="600" height="300">
+        <a href="http://www.daum.net">
+            <img src="C:/multi604/html/images/002.jpg" alt="절대경로" width="600" height="300">
+        </a>
+        <br>이거 누르면 다음 감 엌ㅋㅋㅋㅋ
     </p>
     <br>
     <br>
 
     <p>상대경로 활용 = .\pic\002\004.jpg<br>
-        <img src=".\pic\002\004.jpg" alt="상대경로" width="600" height="300">
+        <a href="http://www.naver.com" target="_blank">
+            <img src="./pic/002/004.jpg" alt="상대경로" width="600" height="300">
+        </a>
+    <br>이거 누르면 네이버 감 엌ㅋㅋㅋ</p>
+    <br><br><br>
+    <p>상위 디렉토리에 있는거 띄우기 = ..\007.png<br>
+        <img src="../007.png" alt="상위 디렉토리" width="150" height="300">
+        이건 아무것도없어
     </p>
-    </body>
+    <hr>
+    <!--------------------------------------------------------------------------------------->
+
+    <!-- figure 태그
+        img태그에 설명글 추가하는 태그
+        figcaption 태그와 함께 사용함 
+        걍 이미지 태그 밑에 p태그써서 글쓰는거랑 같은데
+        동료가 알아보기 쉬우라고 쓰는 태그임 별의미 없음-->
+
+    <figure>
+        <img src="pic/001/003.jpg" alt="" width="600" height="300">
+        <figcaption>이건 pic폴더의 001폴더의 003.jpg다</figcaption>
+    </figure>
+    <br><hr><br>
+    <!--------------------------------------------------------------------------------------->
+    
+    <!--map 태그
+        이미지의 일부분만 링크거는거
+        하나의 이미지에 여러개 링크를 걸수있음  
+        area , usemap 속성을 사용하여 지정
+        rect shape는  coords 속성의 1,2번째 숫자가 한 점의 좌표, 
+        3, 4번째 숫자가 또 한 점의 좌표.
+        두 점을 기준으로 사각형을 만드는거.
+        즉 (x,y),(x,y) 의 형태인거임-->
+    
+    <!--area 태그의 옵션
+        alt : 대체 텍스트
+        coords : 링크로 사용할 영역을 지정하는 속성
+        shape : 링크로 사용할 영역의 모양을 지정하는 속성 rect, circle, poly
+        download : 링크를 클릭시 문서를 다운로드함
+        href : 링크 걸 주소를 입력하는 속성
+        target : 링크할 창의 종류를 선택 _blank, _top, _self, _parents 
+        -->
+    <map name="001">
+        <area shape="rect" coords="0,0,150,150" href="https://www.daum.net"
+        alt="다음" target="_blank">
+        <area shape="rect" coords="150,150,300,300" href="https://www.naver.com"
+        alt="네이버" target="_blank">
+
+    </map>
+    <img src="./pic/001/001.jpg" alt="" usemap="#001" style="width:300px; height:300px;"><br>
+    <p>map 태그 학습용</p><br>
+    <br><br>
+        <!-- 문제3) 이미지 크기 500x500(px) 
+            사각 4개의 링크-->
+    
+    <map name="apc">
+        <!-- 가운데 공백의 사각형은 175,175,350,350  -->
+        <area shpae="rect" coords="175,0,350,175" href="https://www.daum.net" alt="다음" target="_blank">
+        <area shpae="rect" coords="0,175,175,350" href="https://www.naver.com" alt="네이버" target="_blank">
+        <area shpae="rect" coords="350,175,500,350" href="https://www.youtube.com" alt="유튜브" target="_blank">
+        <area shpae="rect" coords="175,350,350,500" href="https://www.nate.com" alt="네이트" target="_blank">
+    </map>
+    <img src="./apc.jpg" usemap="#apc" alt="" style="width:500px; height:500px;"><br>
+    <p>map 태그 실습</p><br>
+
+    <!-------------------------------------------------------------------------------------->
+    <!-- 문제4) 이미지 파일을 클릭했을 때 다음 홈페이지와 네이버 홈페이지로
+                이동하는 링크를 생성하고 그 이미지에 대한 설명을 출력하시오 -->
+    
+    <map name="que4">
+        <area shape="rect" coords="0,0,275,510" href="https://www.daum.net" alt="다음" target="_blank">
+        <area shape="rect" coords="275,0,510,510" href="https://www.naver.com" alt="네이바" target="_blank">
+    </map name="que4">
+    
+    <figure>
+    <img src="./abc.jpg" alt="" usemap="#que4">
+    <figcaption>반으로 나눠서 왼쪽은 다음 링크, 오른쪽은 네이버 링크.</figcaption>
+</figure>
+</body>   
 </html>
