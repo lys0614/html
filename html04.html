@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>html 4일차</title>
+</head>
+<body>
+    <!--form 태그 : 사용자 입력 태그
+        입력된 사용자의 정보를 웹 서버로 전송하는 역할-->
+    <!-- <form action=""></form> -->
+    <!-- action : form태그 자식 태그가 저장하고 있는 데이터를 지정한 페이지로
+                    전송함 -->
+    <!-- method : 데이터를 전송하는 방식 지정 (get, post)-->
+        <!-- get : 데이터를 web사이트의 주소에 붙여서 전송 
+                    중요한 정보가 없는 데이터를 전송할때 사용, post보다 빠름-->
+        <!-- post : 페이지 전체를 암호화해서 전송 
+                    중요한 정보를 보낼때 사용
+                    get방식 보다 속도가 느림-->
+    <!--label 태그 : 사용자 데이터 입력란 앞 뒤에 붙어서 해당 데이터 입력란이 무엇인지 표시하는
+        기능. 한 줄에 여러가지 태그를 입력 가능함(= inline 형식).
+        for속성을 사용하면 라벨을 클릭해도 input태그에 클릭한것과 같은 효과를 일으킴
+         -->
+    <p>label 태그 기초 실습</p>
+         <label>이름 : <input type="text"></label><br>
+         <label>비밀번호 : </label><input type="password"><br>
+         <label for="em">이메일 </label>
+         <input id="em" type="email">
+    <br><hr><br>
+    <!-- input 태그 : 사용자의 입력을 받는 태그, /input안써도 되는태그. inline 형식
+        type속성에 따라서 사용하는 방법이 다름. 
+        form 태그의 자식 태그로 사용해야 데이터를 서버로 전송할수 있다-->
+        <!-- id 속성 -->
+        <!-- placeholder 속성 text type에 주로 사용됨-->
+        <!-- value = 사용자가 입력하는 데이터를 실제 가지고 있는 속성
+            미리 입력 시 사용자가 데이터를 입력하지 않아도 값이 출력 됨. -->
+        <!-- checked 속성 체크박스류 태그에 쓰는 속성, 미리 체크되있게 해주는거
+             disabled 속성 입력상자를 못쓰게 하는 속성-->
+    <p>input 태그 기초 실습</p>
+    <label>이름 : </label>
+        <input type="text" id="name" placeholder="이름"><br>
+    <label> 전화번호 : </label>
+        <input type="text" id="pass" placeholder="비밀번호"><br>
+    <label>주소 : </label>
+        <input type="text" id="address" value="dd" disabled><br>
+    <label>이메일 : </label>
+        <input type="text" id="email">
+
+    <br><hr><br>
+    <p>input type 기초 실습</p>
+    <label>type="text"</label><input type="text" value="일반text"><br>
+    <label>type="password"</label><input type="password" placeholder="패스워드"><br>
+    <label>type="email"</label><input type="email" placeholder="이메일@입력.해.라"><br>
+    <label>type="button"</label><input type="button" value="밸류가 꼮 들어가야함"><br>
+    <label>type="submit"</label><input type="submit" value="확인버튼 밸류필수"><br>
+    <label>type="reset"</label><input type="reset" value="리셋버튼"><br>
+    <label>type="tel"</label><input type="tel" placeholder="전화번호 tel type"><br>
+    <label>type="number"</label><input type="number" placeholder="숫자만 입력"><br>
+    <label>type="color"</label><input type="color"><br>
+    <label>type="date"</label><input type="datetime-local"><br>
+    <label>type="checkbox"</label>
+        <input type="checkbox" value="1" checked>1
+        <input type="checkbox" value="2">2
+        <input type="checkbox" value="3">3
+        <input type="checkbox" value="4">4<br>
+    <label>type="radio"</label>
+        <input type="radio" name="num" checked>1
+        <input type="radio" name="num">2
+        <input type="radio" name="num">3
+        <input type="radio" name="num">4<br>
+    <label>type="hidde"</label>
+        <input type="hidden" value="히든">
+    <br><hr><br>
+    <!-- type : range 
+        슬라이드막대를 생성하는 태그
+        min, max, value 속성을 사용한다. step 속성은 움직일떄 변동되는 값을 정하는 속성-->
+    <p> range 태그 </p>
+    <input type="range" min="0" max="10" value="5"><br>
+    <p> range 태그 + step 속성</p>
+    <input type="range" min="0" max="100" value="50" step="5"><br>
+</body>
+</html>
