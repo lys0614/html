@@ -1,0 +1,19 @@
+#p03{
+    color:blue;
+}
+article{
+    width:570px;/*너비*/
+    padding:30px;/*테두리와 내용 사이의 여백*/
+    border: 5px dashed blue;/*테두리 스타일*/
+}
+
+#h201{
+    color:pink;
+    background-color:black;
+}
+
+h2.h2class{
+    color:indigo;
+    border:1px solid black;
+    margin:15px;
+}

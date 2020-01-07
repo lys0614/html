@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html05-2</title>
+</head>
+<body>
+<!-- select, optgroup, option 태그 -->
+<!-- 사용자의 입력이 아닌 개발자가 선정해놓은 내용을 선택할수있도록 해놓은거 -->
+<!-- select = 드롭다운 메뉴를 제공하는 태그 -->
+    <!-- select태그의 속성 : size. multiple. -->
+    <!-- size = 해당 드롭다운 메뉴에 표시될 항목의 개수 지정 -->
+    <!-- multiple = 브라우저 화면에 여러 옵션이 표시되면서 Ctrl키를 누른상태로 여러 항목을
+        선택할수있게 해줌. -->
+<!-- option = 드롭다운 항목을 표시하는 태그 -->
+    <!-- option태그의 속성 : value, selected -->
+    <!-- value = 옵션을 선택했을때 서버로 넘겨질 값 -->
+    <!-- selected = 기본으로 선택되어있게 설정하는 속성 -->
+    <p>select, option 기초 실습</p>
+    <label class="reg" for="class">학과</label>
+    <select size="1" id="class">
+        <option value="archi">건축공학과</option> 
+        <option value="mechanic">기계공학과</option>
+        <option value="indust">산업공학과</option>
+        <option value="elec">전기전자공학과</option>
+        <option value="computer" selected>컴퓨터공학과</option>
+        <option value="chemical">화학공학과</option>
+    </select>
+    <br><br>
+    <label class="reg" for="class">학과 multiple</label>
+    <select size="5" id="class" multiple>
+        <option value="archi">건축공학과</option> 
+        <option value="mechanic">기계공학과</option>
+        <option value="indust">산업공학과</option>
+        <option value="elec">전기전자공학과</option>
+        <option value="computer" selected>컴퓨터공학과</option>
+        <option value="chemical">화학공학과</option>
+    </select><br><br>
+<!-- optgroup = 여러option 태그를 묶어서 표현할때 쓰는 태그, option태그의 자식태그다 -->
+    <p>optgroup 기초 실습</p>
+    <label class="reg" for="class">학과</label>
+    <select id="class">
+        <optgroup label="이과">
+            <option value="archi">건축공학과</option> 
+            <option value="mechanic">기계공학과</option>
+            <option value="indust">산업공학과</option>
+            <option value="elec">전기전자공학과</option>
+            <option value="computer" selected>컴퓨터공학과</option>
+            <option value="chemical">화학공학과</option>
+        </optgroup>
+        <optgroup label="문과">
+            <option value="history">사학과</option>
+            <option value="lang">어문학부</option>
+            <option value="phillo">철학</option>
+        </optgroup>
+    </select><br><hr><br>
+<!-- datalist = select 태그와 비슷한 태그
+    사용자의 입력, 개발자 제공 데이터 둘 다 선택가능한 콤보박스 
+    option 태그를 사용해서 항목을 만듦.
+    사용자의 직접입력이 들어가기 때문에 input 태그를 사용해야 함-->
+        <!-- input 태그에 반드시 id값을 지정해야함 list속성을 사용하여 datalist의 
+        id값을 입력해야함 -->
+    <p>datalist 기초 실습</p>
+    <input type="text" id="interest" list="choices" placeholder="직접입력 할 수 있습니다">
+    <datalist id="choices">
+        <option value="grammar" label="문법"></option>
+        <option value="voca" label="어휘"></option>
+        <option value="speaking" label="회화"></option>
+        <option value="listening" label="리스닝"></option>
+        <option value="news" label="뉴스청취"></option>
+        <option></option>
+    </datalist>
+    <br><hr><br>
+<!-- textarea = 기존의 input type="text"는 한줄짜리 텍스트 입력만 받으나
+    textarea는 여러라인의 텍스트입력을 받을수있음
+    cols = 화면에 출력될 가로 너비를 설정하는 속성
+    rows = 화면에 출력될 라인의 수를 설정하는 속성, 텍스트가 라인수를 넘어가면 스크롤바가 생성
+        -->
+    <p>textarea 기초 실습</p>
+    <textarea cols="30" rows="10"></textarea>
+    <br><hr><br>
+<!-- button = 기본적인 버튼을 생성하는 태그.
+    input type="button" 태그와 똑같은 태그. 코더가 한눈에 태그의 역할을 알아보게 하기 위해서
+    생성된 태그.
+    type속성으로 submit, reset, button이 있음. button 속성은 버튼모양만 만들뿐 자체 기능없게
+    하는 속성. 기본값은 button 
+    value속성을 따로 쓰지않고 <button>value</button> 과 같은 방식으로 사용-->
+    <p>button 태그 기초 실습</p>
+    <input type="button" value="input으로 만든 버튼">
+    <button>button태그로 만든 버튼</button>
+    <br><hr>
+<!-- output -->
+    <p>output 태그 기초</p>
+    <form oninput="result.value=parseInt(num1.value)+parseInt(num2.value)">    
+        <input type="number" name="num1" value="0">
+         + 
+        <input type="number" name="num2" value="0">
+         = 
+        <output name="result" for="num"></output>    
+    </form>
+    <br><hr>
+    <p>progress 태그 기초 </p>
+    
+    <ul>
+        <li>
+            <label>10초 남음</label>
+            <progress id="prog1" value="50" max="60"></progress>
+            <button id="btn1">클릭1</button>
+        </li>
+        <li>
+            <label>진행률30%</label>
+            <progress id="prog2" value="30" max="100"></progress>
+            <button id="btn2">클릭2</button>
+        </li>
+        <script>
+            var btn2 = document.querySelector("#btn2");
+            var prog2 = document.querySelector("#prog2");
+            var timer2 = 0;
+    
+            btn2.onclick = function(){
+                timer2 = setInterval(function(){
+                    var result = Number(prog2.value);
+    
+                    if(result >= 100){
+                        clearInterval(timer2);
+                        alert("완료");
+                    }
+                    else{
+                        prog2.value=result+10;
+                    }
+                }, 1000);
+            };
+        </script>
+    </ul>
+
+    <br><hr>
+    <p>meter 태그 기초</p>
+    <!-- meter -->
+    <!-- progress 바와 비슷한 기능을 하는 태그
+        전체 크기에서 얼마나 비중을 차지하는가를 나타내는 태그 
+        meter 태그의 속성 : 
+            min,max = 최소값 최대값
+            value = 현재값 
+            low = 현재 범위를 낮은 값이라고 설정
+            high = 현재 범위를 높으 값이라고 설정
+            optimum = 적절한 범위를 설정-->
+    <ul>
+        <li>
+            <label>점유율 0.8</label>
+            <meter value="0.8"></meter>
+        </li>
+        <li>
+            <label>사용량 64%</label>
+            <meter min="0" max="100" value="64"></meter>
+        </li>
+        <li>
+            <label>트래픽 초과</label>
+            <meter min="1024" max="10240" low="2040" high="8192" value="9216"></meter>
+        </li>
+        <li>
+            <label>적절한 트래픽</label>
+            <meter value="0.5" optimum="0.8"></meter>
+        </li>
+    </ul>
+    <br><hr>
+    <p><b>연습문제1</b></p>
+    <form>
+        <h1>예약 정보</h1>
+        <dl>
+            <dd>
+                <label for="r-name">이 름</label>
+                <input type="text" id="r-name">
+            </dd>
+            <dd>
+                <label for="r-phone">휴대폰</label>
+                <input type="tel" id="r-phone">
+            </dd>
+            <dd>
+                <label for="r-email">이메일</label>
+                <input type="email" id="r-email">
+            </dd>
+            <dd>
+                <input type="submit" value="예약하기">
+            </dd>
+        </dl>
+    </form>
+    <br><hr>
+    <p><b>연습문제 2</b></p>
+    <h1>프런트엔드 개발자 지원서</h1>
+        <form>
+            <p>HTML, CSS, Javascript 에 대한 기술력 이해와 경험이 있는 분을 찾습니다.</p>
+            <hr>
+            <dl><b>개인정보</b>
+                <dd>
+                    <label for="name1">이름</label>
+                    <input type="text" id="name1">
+                </dd>
+                <dd>
+                    <label for="tel1">연락처</label>
+                    <input type="tel" id="tel1">
+                </dd>
+            </dl>
+            <dl><b>지원 분야</b>
+                <dd>
+                    <input type="radio" value="web_pub"> 웹 퍼블리싱<br>
+                    <input type="radio" value="web_app"> 웹 애플리케이션 개발자<br>
+                    <input type="radio" value="develop_inv"> 개발 환경 개선
+                </dd>
+            </dl>
+            <dl><b>지원 동기</b>
+                <dd>
+                    <textarea cols="60" rows="5" placeholder="본사 지원 동기를 입력해 주세요"></textarea>
+                </dd>
+            </dl>
+        </form>
+</body>
+</html>
