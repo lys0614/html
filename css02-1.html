@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차 1번</title>
+</head>
+<!-- 외부 서버에서 제공하는 폰트를 로드하여 사용 -->
+<!-- googlefont 에서 가져온 링크. -->
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        /* transfonter에 폰트를 업로드해서 컨버팅하여 가져온거 */
+        font-family: 'Gugi';
+        src: url('Gugi-Regular.eot');
+        src: url('Gugi-Regular.eot?#iefix') format('embedded-opentype'),
+            url('Gugi-Regular.woff2') format('woff2'),
+            url('Gugi-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+}
+    p{
+        font-size:30px;
+    }
+    .ng-font{
+        /* googlefont 에서 나눔고딕의 폰트 코드를 가져옴. */
+        font-family: 'Nanum Gothic', sans-serif;;
+    }
+    .w-font{
+        font-family: 'Gugi';
+       }
+
+</style>
+<body>
+<p>브라우저 기본 글꼴 사용</p>
+<p class="ng-font">나눔고딕 웹 폰트 사용</p>
+<p class="w-font">직접 업로드한 웹 폰트 사용</p>
+
+
+</body>
+</html>

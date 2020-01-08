@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 2일차</title>
+</head>
+<style>
+    /* css선택자 
+        css속성을 적용하기위해 지정한 html태그를 정확히 선택하기위한 구분자
+        */
+    /* 전체 선택자
+        해당 페이지의 모든 html 태그를 선택하는 선택자 
+        주로 해당 페이지의 전체 스타일을 지정하기 위해서 
+        가장 먼저 사용됨
+        기호는 * 기호를 사용*/
+    * {
+        font-family:'궁서체';
+    }
+    /* 태그 선택자
+        html태그명을 그대로 사용하는 선택자
+        해당 페이지의 지정한 html태그명과 같은 모든태그에 적용하는 스타일 선택자
+        지정한 html 태그에 동일한 스타일을 적용하기 위해서 사용함 */
+    h2{
+        color:blue;
+    }
+    p{
+        font-size:12px;
+        margin-left:20px;
+    }
+    /* 클래스 선택자
+        다른 종류의 html 태그를 하나의 그룹으로 묶어서 CSS 속성을 적용하는 선택자
+        기호는 . 기호를 사용
+        html 태그에 class 속성을 사용하여 그룹명을 지정함
+        */
+    .redtext{
+        color:red;
+    }
+    /* html태그명과 함께 클래스 선택자를 사용할수 있음  */
+    h2.redtext{
+        margin-left:50px;
+        font-weight: lighter;
+    }
+    /* id선택자
+        지정한 html의 id속성값을 기준으로 html태그를 선택하는 선택자
+        # 기호를 사용함. 
+        해당 html 페이지에서 id는 유일한 값을 가지고 있기 때문에 단 하나의 태그만 선택할수있음.*/
+    #h201{
+        border:1px solid black;
+        background-color:pink;
+        padding:35px;
+    }
+    /* 그룹 선택자
+        동일한 CSS속성을 적용할때 해당 선택자들을 모아서 한번에
+        스타일을 적용할때 사용하는 선택자 */
+    h1, h2, h3, .redtext, h2.redtext, #h201{
+        text-align:center !important; 
+        
+    }
+    div{
+        color:purple;
+    }
+    div > h3{
+        text-align:right;
+    }
+    /* !important
+        css속성을 상속받아 사용할 경우 나중에 실행되는 속성이 기존의 속성을 무시하고 실행되는 경우가
+        발생하는데 이 속성값을 기존의 속성에 사용하게 되면 기존의 속성이 무시되지 않고 나중에 실행되는
+        속성이 무시된다*/
+    body{
+        color : blue;
+    }
+    h2{
+        font-size: 20px;
+        color:brown;
+    }
+</style>
+<body>
+    <h1 class="redtext">블루베리에 관한 연구</h1>
+    <h2 id="h201">블루베리와 항산화 효능</h2>
+    <p class="redtext">블루베리는 ..... 합니다</p>
+    <h2 class="redtext">블루베리와 노화</h2>
+    <p style="background-color: skyblue;">USDA .... 발견하였습니다.</p>
+    <br><br>
+    <div>
+        <h3>
+        마디씩 오는 이름을 그리워 봅니다. 쉬이 때 마디씩 어머님, 위에도 쓸쓸함과 잠, 슬퍼하는 이네들은
+        듯합니다. 나는 계절이 동경과 노새, 말 가난한 하나에 때 거외다.
+        </h3>
+    </div>
+    <br><hr><br>
+    <h1>CSS</h1>
+    <h2>웹 문서의 디자인</h2>
+    <p>웹 표준에 의한 웹 문서는 디자인과 내용이 분리되어 있습니다.</p>
+    <p>내용은 html을 이용해 구성하고, 디자인은 CSS를 이용해 꾸미는 것입니다.</p>
+</body>
+</ht

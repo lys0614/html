@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차 2번</title>
+</head>
+<style>
+    /* font-size
+        글자의 크기르 변경하는 css속성
+        기본단위는 px, web의 기본 글자 크기느 16px 
+        px, em, %를 많이 사용함.*/
+        /* px : 픽셀수를 가지고 크기를 설정(절대값, 기본단위)
+            em : 기본단위의 배수를 가지고 크기를 설정(1em = 16px)
+            % : 기본단위를 백분율로 표시하여 크기를 설정*/
+        .fontpx{
+            font-size:16px;
+        }
+        .fontem{
+            font-size:1em;
+        }
+        .font100{
+            font-size:100%;
+        }
+    /* font-weight
+        문자의 굵기를 설정하는 css 속성
+        100~900까지의 숫자로 굵기 표현
+        미리 설정된 형태의 단어도 존재함
+        lighter, nomal, bold, bolder */
+    /* font-variant
+        영문자 작은 크기의 대문자로 설정하는 CSS속성
+        normal, small-caps */
+    /* font-style
+        문자의 모양을 이탤릭체로 변경하는 CSS 속성 */
+    p.italy{
+        font-style:italic;
+    }
+    p.nonitaly{
+        font-style:normal;
+    }
+    /* font
+        font에 관련된 여러가지 css 속성을 한번에 적용하는 속성
+        font-size, font-style, font-weight, font-variant, font-family등을 한번에 적용할수 있음 */
+    p.font1{
+        font:italic small-caps bold 24px/30px Georgia;
+        
+    }
+    p.font2{
+        font-size:24px;
+        font-style:italic;
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+</style>
+<body>
+    <p> 기본 글꼴의 기본 크기</p>
+    <p class="fontpx">기본 글꼴 px 단위로 표현</p>
+    <p class="fontem">기본글꼴 em 단위로 표현</p>
+    <p class="font100">기본글꼴 % 단위로 표현</p>
+    <br><hr><br>
+    <p style="font-size:1em;">1em의글꼴</p>
+    <p style="font-size:100%;">100%크기의 글꼴</p>
+    <p style="font-size:24px;">24px의 글꼴</p>
+    <p style="font-size:1.5em;">1.5em크기의 글꼴</p>
+    <p style="font-size:150%;">150%크기의 글꼴</p>
+    <p style="font-size:32px;">32px의 글꼴</p>
+    <p style="font-size:2em;">2em의 글꼴</p>
+    <p style="font-size:200%;">200%크기의 글꼴</p>
+
+    <br><hr><br>
+
+    <p> font-weight:미적용 </p>
+    <p style="font-weight: normal;"> font-weight : normal</p>
+    <p style="font-weight: 400;"> font-weight :400 </p>
+    <p style="font-weight: bold;"> font-weight : bold</p>
+    <p style="font-weight: 700;"> font-weight : 700</p>
+
+    <br><hr><br>
+
+    <h3>font-variant 속성</h3>
+    <p stlye="font-variant:normal;">font-variant : normal</p>
+    <p>그냥 대문자 FONT-VARIANT : 안씀</p>
+    <p style="font-variant:small-caps;">font-variant : small-caps</p>
+
+    <br><hr><br>
+    
+    <p>기본 글꼴</p>
+    <p class="nonitaly">font-style:normal</p>
+    <p class="italy">font-style 써서 이탤릭체로 만든거</p>
+    
+    <br><hr><br>
+
+    <p class="font1">font를 사용하여 여러가지 속성을 한번에 적용</p>
+    <p class="font2">여러가지 font 속성을 따로따로 적용</p>
+</body>
+</html>

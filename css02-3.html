@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차 3번 200108</title>
+</head>
+<style>
+    /* color 속성
+        문자의 색상을 변경하는 css 속성
+        색상을 지정하는 방법은 미리 지정된 색상단어를 입력하는 방식.
+        rgb,hex,rgba,hsla,hsl 코드를 직접 입력하는 방식 
+        미리 지정된 색상단어 입력 방식 
+        (https://www.w3school.com 참조)
+        (https://www.quackit.com/css/css_color_codes.cfm)참고*/
+    
+    /* hex코드 입력방식
+        색상코드를 16진수로표현하여 red, green, blue 순서대로 2자리씩 총 6자리를 입력하는 방식
+        색상코드는 00~FF까지 있음 hex코드 입력방식을 뜻하는 # 기호를 입력.
+        color:#aabbcc; 식으로 */
+
+    /* rgb코드 입력방식
+        색상코드를 10진수 숫자 0 ~ 255 까지의 숫자로 red green blue 순으로 입력하는 방식 
+        rgb코드 입력방식을 뜻하는 rgb(0, 0, 0)형태로 입력.
+        color:rgb(130,130,130); 방식*/
+
+    /* rgba코드 입력방식
+        rgb코드 입력방식에서 투명도 alpha를 포함해서 red, green, blue,alpha 순으로 입력하는 방식 
+        alpha값은 0.0 ~ 1.0 까지의 값을 가지고 있음
+        rgba(0 ,0 ,0 ,0.0)의 형태
+        color:rgba(100,200,120,0.5);*/
+    
+    /* hsl코드 입력방식
+        rgb코드와는 달리 색상을 색조,채도,명도로 구분하여 표현하는 방식
+        색조는 0~360 범위, 채도,명도는 0~100까지 %입력 
+        입력순서는 색조 채도 명도 순 입력
+        hsl코드 입력방식을 뜻하는 hsl(0, 0, 0)의 형태로 입력
+        hsl(100,80%,80%)*/
+    
+    /* hsla 코드 입력 방식
+        hsl코드 입력방식에서 투명도 alpha 포함해서 입력하는 방식
+         */
+    
+    /* COLOR 속성에 사용한 값은 문자 뿐 아니라 다른 속성에서도 사용할 수 있음 */
+    /* 색상이름, hex코드 입력방식을 가장 많이 사용함. */
+
+    /* text-decoration
+        글자에 선 넣어주는거 
+        none, underline, overline, line-through
+        a태그에 기본적으로 underline 속성이 주어져 있음*/
+
+    /* text-transform
+        영문자의 모양을 대문자, 소문자로 변경할때 쓰는 CSS 속성
+        none, capitalize(첫 글자만 대문자), uppercase(전체 대문자), lowercase(전체 소문자)
+        full-width(전각문자) */
+    h1{
+        color:rgb(0,255,0);
+    }
+    h2{
+        color:blue;
+    }
+    .accent{
+        color:#000000;
+    }
+    .hslcode{
+        color:hsl(200, 50%, 30%);
+    }
+    #d02 p{
+        line-height: 1.8em;
+    }
+    #d02 a{
+        text-decoration: none;
+        font-weight: bold;
+    }
+    #d02 .edited{
+        text-decoration: line-through;
+    }
+    #d03 .trans1{
+        text-transform: uppercase;
+    }
+    #d03 .trans2{
+        text-transform: lowercase;
+    }
+    #d03 .trans3{
+        text-transform: capitalize;
+    }
+    #d03 .trans4{
+        text-transform: full-width;
+    }
+
+    </style>
+<body>
+    <div>
+        <h1>세계 10대 슈퍼 푸드</h1>
+        <img src="apc.jpg" alt="">
+        <h2>마늘(garlic)</h2>
+        <p class="hslcode">일해백리</p>
+        <p>마늘 특유의 아린 맛은 <span class="accent">알리신</span> 이라는 성분 때문</p>
+    </div>
+    <br><hr><br>
+    <div id="d02">
+        <p>다양한 기기로 인터넷에 접속할 수 있는 요즘,<br>
+        <span class="edited"> HTML4</span> HTML5를 공부해야 할 때입니다.</p>
+        <p><a href="https://html.spec.whatwg.org/">HTML5 표준 규약 살펴보기</a></p>
+    </div>
+    <br><hr><br>
+    <div id="d03">
+        <ul> have to study
+            <li class="trans1"> html </li>
+            <li class="trans2"> CSS </li>
+            <li class="trans3"> java script</li>
+            <li class="trans4"> android </li>
+        </ul>
+    </div>
+</body>
+</html>
