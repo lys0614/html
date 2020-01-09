@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 3일차 연습문제</title>
+    <style>
+        #q1 .q1p{
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        #q2 .q2list{
+            list-style-type:none;
+        }
+        #q2 .q2p{
+            line-height: 2em;
+            font-weight:bold;
+            color:#ad3000;
+        }
+        #q3 .container{
+            background-color: black;
+            color:white;
+            text-align : center;
+        }
+        #q4{
+            font-family:'Malgun Gothic';
+            width:750px;
+            padding:10px;
+            border:1px solid #ccc;
+        }
+        #q4 h1{
+            font-size:17px;
+        }
+        #q4 p{
+            font-size:16px;
+            line-height:25px;
+        }
+        #q4 .accent{
+            font-weight:bold;
+            color:red;
+        }
+        #q4 .container1{
+            float:left;
+            padding:10px;
+            margin-right:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="q1">
+        <h1>최신 웹 디자인 트렌드</h1>
+        <p><span class="q1p"> 반응형 웹 디자인 </span>- 다양한 화면 크기에 최적화하다</p>
+        <p><span class="q1p"> 플랫 디자인 </span>- 입체에서 평면으로</p>
+        <p><span class="q1p"> 풀스크린 배경 </span>- 콘텐츠에 집중</p>
+        <p><span class="q1p"> 원페이지 사이트 </span>- 한페이지에 모든 내용을 담다</p>
+        <p><span class="q1p"> 패럴렉스 스크롤링 </span>- 동적인 효과로 강한 인상을</p>
+        <p><span class="q1p"> 웹 폰트 </span>- 웹 타이포그래피를 받쳐주는 기술</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="q2">
+        <h1>최신형 웹 디자인 트렌드</h1>
+        <ul class="q2list">
+            <li><span class="q2p">반응형 웹 디자인</span> - 다양한 화면 크기에 최적화하다</li>
+            <li><span class="q2p">플랫 디자인</span> - 입체에서 평면으로</li>
+            <li><span class="q2p">풀스크린 배경</span> - 콘텐츠에 집중</li>
+            <li><span class="q2p">원페이지 사이트</span> - 한페이지에 모든 내용을 담다</li>
+            <li><span class="q2p">패럴렉스 스크롤링</span> - 동적인 효과로 강한 인상을</li>
+            <li><span class="q2p">웹 폰트</span> - 웹 타이포그래피를 받쳐주는 기술 </li>
+        </ul>
+    </div>
+
+    <br><hr><br>
+
+    <div id="q3">
+        <h1 class="container">최신 웹 디자인 트렌드</h1>
+    </div>
+
+    <br><hr><br>
+
+    <div id="q4">
+        <div class="container1">
+            <img src="./aa.jpg"  style="width:280; height:200px;"  class="q4image" alt="">
+        </div>
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개!</h1>
+        <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다.
+            이제 모바일, 태블릿, PC 등 멀티디바이스에 한 번에 적용할 수 있는 웹 디자인 방법을 알아야한다.
+            바로 코딩을 이용한 웹 디자인이다.</p>
+        <p><span class="accent">이 책은 HTML과 CSS에 대한 기초적인 내용만 알고있다면 누구든 쉽게 
+            코딩으로 여러가지 기기에 대응할 수 있는 웹 디자인을 만들 수 있도록 기획되었다.</span> 
+            jQuery를 몰라도 된다. jQuery플러그인을 가져다 
+            사용할 수 있는 방법을 소스 한 줄 한 줄 자세하고 친절하게 설명해 놓았으니까!
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3일차</title>
+    <style>
+        /* text-shadow
+            텍스트에 그림자를 부여하는 속성
+            none, text-shadow : 가로 세로 번짐 색상 
+            none 이 기본값.
+            가로 및 세로 값을 양의 정수로 입력하면 왼쪾에서 오른쪽으로, 위에서 아래방향으로
+            가로 및 세로 값을 음의 정수로 입력하면 오른쪾에서 왼쪽으로, 아래에서 위방향으로
+            ,를 통해서 여러 그림자를 줄수 있음*/
+            #div01 .shadow1{
+                color:rgb(255, 165, 0);
+                text-shadow: 1px 1px;
+            }
+            #div01 .shadow2{
+                text-shadow: 5px 5px 3px #f00;
+            }
+            #div01 .shadow3{
+                color:#fff;
+                text-shadow:7px -7px 5px #000;
+            }
+            #div01 .shadow4{
+                color:#000;
+                text-shadow:0px 0px 4px #cccccc, 0px -5px 4px #ffff33, 2px -10px 6px #ffdd33,-2px -15px 11px #f80, 2px -19px 18px #ff2200;
+            }
+        /* white-space
+            텍스트의 공백 처리방식을 설정하는 속성
+            normal, nowrap, pre, pre-line, pre-wrap 
+            normal - 여러개의 공백을 하나로 표시
+            nowrap - 여러개의 공백을 하나로 표시, 영역너비를 넘어갈경우 줄바꿈하지 않고 한줄로 표시
+            pre - 여러개의 공백을 그대로 표시, 영역너비를 넘어갈경우 줄바꿈하지 않고 한줄로 표시
+            pre-iine - 여러개의 공백을 그대로 표시, 영역 너비를 넘어갈 경우 줄바꿈
+            pre-wrap - 여러개의 공백을 그대로 표시, 영역 너비를 넘어갈 경우 줄바꿈*/
+            #div02 > p.space1{
+                white-space: normal;
+            }
+            #div02 > p.space2{
+                white-space: nowrap;
+            }
+            #div02 > p.space3{
+                white-space:pre;
+            }
+            #div02 > p.space4{
+                white-space:pre-line;
+            }
+            #div02 > p.space5{
+                white-space:pre-wrap;
+            }
+        /* letter-spacing 텍스트 간격을 설정하는  css속성 
+            word-spacing 각 단어사이의 간격을 설정하는 css속성
+            normal, 양의정수값, 음의정수값*/
+        
+            #div03 .letter1{
+                letter-spacing: normal;
+            }
+            #div03 .letter2{
+                letter-spacing: 5px;
+            }
+            #div03 .word1{
+                word-spacing: normal;
+            }
+            #div03 .word2{
+                word-spacing: 10px;
+            }
+         /*direction
+            텍스트 출력 방향을 설정하는 css 속성
+            ltr rtl  */
+            #div09 .content{
+                border:2px solid #f00;
+                width:300px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #div09 .content:hover{
+                overflow:visible;
+            }
+            
+            #div10 .pp11{
+                border:1px solid black;
+                width:450px;
+                padding:15px;
+                font-size:20px;
+                line-height: 30px;
+                text-align: center;
+            }
+            #container{
+                width:650px;
+                margin:0 auto;/* 마진값 0 auto 하면 중앙정렬 */
+                padding: 5px;
+            }
+
+            #check{
+                width:640px;
+                border:2px solid #CCC;
+            }
+
+            #check > h1{
+                color:white;
+                font-size:1em;
+                background: #222222;
+                margin: 0;
+                padding: 10px;
+            }
+            #check > h2{
+                color: #ff0000;
+                font-size:1.2em;
+                text-align: center;
+            }
+            #check > p{
+                font-size:1.5em;
+                line-height:2em;
+                text-align: center;;
+            }
+            .accent{
+                color:blue;
+            }
+            .smalltext{
+                font-size:0.7em;
+            }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <h3>text-shadow</h3>
+        <h1 class="shadow1">HTML5</h1>
+        <h1 class="shadow2">HTML5</h1>
+        <h1 class="shadow3">HTML5</h1>
+        <h1 class="shadow4">HTML5</h1>    
+    </div>
+
+    <br><hr><br>
+
+    <div id="div02">
+        <h3>white-space 속성</h3>
+        <h3>white-space:normal</h3>
+        <p class="space1">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h3>white-space:nowrap</h3>
+        <p class="space2">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h3>white-space:pre</h3>
+        <p style="white-space: pre" class="space3">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h3>white-space:pre-line</h3>
+        <p class="space4">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h3>white-space:pre-wrap</h3>
+        <p class="space5">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div03">
+        <h3>letter-spacing 속성</h3>
+        <h3 class="letter1">HTML5 - normal</h3>
+        <h3 class="letter2">HTML5 - 5px 글자 간격</h3>
+        <br>
+        <h3>word-spacing 속성</h3>
+        <h3 class="word1">HTML5 CSS Javascript - normal</h3>
+        <h3 class="word2">HTML5 CSS Javascript - 10px 단어 간격</h3>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div04">
+        <p style="direction: ltr;">LTRLTRLTR</p>
+        <p style="direction: rtl;">RTLRTLRTL</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div09">
+        <p class="content">귀리는 베타글루칸(항암 및 면역증강작용을 하는 불소화성 다당류) 성분을 포함하고 있다</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div10">
+        <p class="pp11">
+            웹 문서에서 가장 많이 사용하는 요소인 텍스트는 문단 형태로 많이 쓰이므로 텍스트 정렬이나 들여쓰기, 줄 간격처럼 문단에 영향을 주는 스타일들이 많이 사용됩니다.
+        </p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="container">
+        <img src="./apple.jpg" style="display:block; margin:0px auto; width: 50%; height: 50%;" 
+        alt ="가정용 꿀사과 - 흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다.
+        질좋은 사과를 저렴하게 즐겨보세요">
+        <div id="check">
+            <h1>확인하세요</h1>
+            <h2>주문 및 배송</h2>
+            <p><span class="accent">오후 2시 이전</span> 주문건은 당일 발송합니다<br>
+            2시 이후 주문건은 다음날 발송합니다(주말 제외)</p>
+            <hr>
+            <h2>교환 및 환불</h2>
+            <p><span class="accent">고객 불만족시</span> 100% 환불 해드립니다<br>
+            고객센터로 전화주세요</p>
+            <hr>
+            <h2>고객센터</h2>
+            <p>0000-0000<br>
+            <span class="smalltext">상담시간 : 오전 9시 ~ 오후 6시 (토,일 공휴일 휴무)</span></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 3일차 1번</title>
+
+    <style>
+        /* line-style-type
+            리스트 목록의 불릿 모양을 변경할수 있는 cSS 속성
+            ul용과 ol용이 따로있음
+            ul용 - none(불릿 없애기), disc(채운 원), circle(빈 원), square(채운 사각형)
+            ol용 - decimal(십진수),decimal-leading-zero(0부터시작하는십진수),lower-roman(소문자로마숫자)
+                    upper-roman(대문자로마자),lower-alpha/latin(소문자알파벳),
+                    upper-alpha/latin(대문자알파벳),armenian(아르메니아숫자),gergian(조지왕조시대숫자)
+            
+            */
+            .sqbullet{list-style-type: square;}
+            .nobullet{list-style-type: none;}
+            .book1{list-style-type: lower-alpha;}
+            .book2{list-style-type: upper-roman;}
+        /* list-style-image
+            리스트 불릿을 이미지로 대체하는 css속성
+            none, image:url('경로')*/
+            .listimage{
+                list-style-image: url('./dot.png');
+            }
+            .listside{
+                list-style-position: inside;
+            }
+        /* list-style
+            list-style-type, list-style-position, list-style-image의 속성을 한번에 입력할수
+            있는 CSS속성 */
+            .liststyle{
+                list-style:circle inside url('./dot.png')
+            }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <h3>list-style-type 속성</h3>
+        <h3>ul용 속성</h3>
+            <ul class="sqbullet">
+                <li>회사소개</li>
+                <li>도서</li>
+            </ul>
+            <ul class="nobullet">
+                <li>회사소개</li>
+                <li>도서</li>
+            </ul>
+        <h3>ol용 속성</h3>
+            <ol class="book1">
+                <li>Do it! 시리즈</li>
+                <li>된다 시리즈</li>
+            </ol>
+            <ol class="book2">
+                <li>Do it!시리즈</li>
+                <li>된다 시리즈</li>
+            </ol>
+        <h3>list-style-image 속성</h3>
+            <ul class="listimage">
+                <li>이미지1</li>
+                <li>이미지2</li>
+            </ul>
+        <h3>list-style-position 속성</h3>
+            <ul class="listside">
+                <li>회사소개</li>
+                <li>부서</li>
+            </ul>
+        <h3>list-style속성으로 list-style-속성들 같이쓰기</h3>
+            <ul class="liststyle">
+                <li>회사소개</li>
+                <li>부서</li>
+                <li>도서</li>
+                <li>전화</li>
+            </ul>
+    </div>
+
+    <br><hr><br>
+
+    
+</body>
+</html>
