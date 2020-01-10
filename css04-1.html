@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 4일차 연습문제 200110</title>
+    <style>
+    body{
+        font-family: "맑은 고딕",돋움;
+    }
+    #q1{
+        background-color:rgba(0,0,255,0.2);
+        border:1px solid blue;
+        width:500px;
+        height:150px;
+    }
+
+    #q2{
+        background-color:rgba(0,0,255,0.2);
+        border:1px solid blue;
+        width:500px;
+        height:150px;
+    }
+    #q2:hover{
+        background-color:blue;
+        color:white;
+    }
+    #container{
+        position:relative;
+        background-image: url("./apple.jpg");
+        background-repeat: no-repeat;
+        background-position:left center;
+        background-size:cover;
+        width:500px;
+        height: 300px;
+        padding:20px;
+        border:1px solid black;
+    }
+    .content{
+        top:250px;
+        width:90%;
+        text-align: center;
+        border:1px solid black;
+        background-color:rgba(255,255,255,0.2);
+        position:absolute;
+        font-size:24px;
+        font-weight: bold;
+    }
+    </style>
+
+</head>
+<body>
+    <!-- 연습문제1 -->
+    <div id="q1">
+        <h3>웹 디자인 트렌드를 따라잡는 비법 대공개</h3>
+        <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다. 이제 모바일, 태블릿, pc 등 멀티디바이스에 한번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로 코딩을 이용한 웹 디자인이다.</p>
+    </div>
+    <br><hr><br>
+    <!-- 연습문제2 -->
+    <div id="q2">
+        <h3>웹 디자인 트렌드를 따라잡는 비법 대공개</h3>
+        <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다. 이제 모바일, 태블릿, pc 등 멀티디바이스에 한번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로 코딩을 이용한 웹 디자인이다.</p>
+    </div>
+    <br><hr><br>
+    <!-- 연습문제3 -->
+    <div id="container">
+        <p class="content">
+           하루 한 알의 사과는 의사를 멀리 한다
+    </div>
+</body>
+</html>
