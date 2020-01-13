@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 5일차 3번파일</title>
+    <style>
+        /* box-sizing
+            html 태그의 너비 기준을 설정하는 CSS속성.
+            content-box(기본값), border-box
+            1. content-box : box-model 에서 content 영역의 너비를 width 속성으로 조절하는 속성. 
+            2. border-box : box-model에서 border 영역의 너비를 width 속성으로 조절하는 속성*/
+        h3{
+            text-align:center;
+        }
+        #div01 > div{
+            width:300px;
+            height:150px;
+            margin:50px;
+            padding:30px;
+            border:5px dashed black;
+        }
+        #div01 > .box1{box-sizing:content-box;}
+        #div01 > .box2{box-sizing:border-box;}
+
+        /* float
+            html 태그 중 img 태그와 text 관련 태그를 같이 사용하기 위해서 개발된 css 속성
+            기존 태그 위에 float 속성이 적용된 태그가 떠 있는 형태로 출력. 
+            float 속성이 사용되면 그 이후에 나오는 모든 태그에 영향을 미침.
+            clear 속성을 통해서 float 속성을 지워줘야 정상으로 돌아옴.
+            left, right, none 세가지값이 있음.
+            left:왼쪽으로 html태그를 붙임
+            right:오른쪽으로 html태그를 붙임, 첫번째 태그가 가장 오른쪽에 있고 나중에 추가된 태그가 왼쪽에 붙음.
+            부모 태그 까지는 영향이 가지 않음. 그래서 부모태그를 하나 달고 있는편이 좋음.*/
+
+        #div02 > .img1{
+            margin-right:25px;
+            float:left;
+        }
+        #div03 > .img1{
+            margin-left:25px;
+            float:right;
+        }
+        #div03 > .img2{
+            margin-right:25px;
+            float:left;
+        }
+        #div04 > .box1{
+            padding:20px;
+            margin:10px;
+            background:#ffd800;
+            float:left;
+        }
+        #div04 > .box2{
+            background:#0094ff;
+            padding:50px;
+            margin-right:10px;
+            float:left;
+        }
+        #div04 > .box3{
+            background:#00ff21;
+            padding:20px;
+            float:left;
+        }
+        #div04 > .box4{
+            background:#ffffff;
+            padding:20px;
+            float:right;
+            border:1px solid black;
+        }
+        #div04 > .box5{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            background:#11aa22;
+        }
+
+        /* clear 속성
+            float 속성이 사용된것을 해제하기 위한 CSS 속성
+            none(기본형), left, right, both
+            left, right : 각 방향으로 들어간 float 속성을 삭제.
+            both : 두 방향 다 삭제. */
+        #div05 > div{
+            padding:30px;
+            margin:20px;
+        }
+
+        #div05 > .box1{
+            background:#ffd800;
+            float:left;
+        }
+        #div05 > .box2{
+            background:#0094ff;
+            float:left;
+        }
+        #div05 > .box3{
+            background:#00ff21;
+            margin-bottom:0;
+        }
+        #div05 > .box4{
+            background:#ffffff;
+            border:1px solid black;
+            clear:both;
+            margin-top:0;
+        }
+        #div05 > .box5{
+            border:2px solid black;
+            background:#11aa22;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+    <h3>box-sizing 속성</h3>
+    <div class="box1">box-sizing:content-box</div>
+    <div class="box2">box-sizing:border-box</div>
+    </div>
+    <br><hr><br>
+    <div id="div02">
+        <img src="./apc.jpg" alt="" class="img1">
+        <h1>float:left 속성 사용해보기</h1>
+        <h2>float 속성을 사용해 보자</h2>
+        <p>float 속성은 clear로 지워줘야 정상으로 돌아온다.</p>
+    </div>
+    <br><hr><br>
+    <div id="div03">
+        <img src="./apc.jpg" alt="" class="img1">
+        <img src="./bg3.jpg" alt="" class="img2">
+        <h1>float:right 속성 사용해보기</h1>
+        <h2>float 속성을 사용해 보자</h2>
+        <p>float 속성은 clear로 지워줘야 정상으로 돌아온다.</p>
+    </div><br><br><br><br>
+    <br><hr><br>
+    <div id="div04">
+        <div class="box1">박스1</div>
+        <div class="box2">박스2</div>
+        <div class="box3">박스3</div>
+        <div class="box4">박스4</div>
+        <div class="box5">박스5</div>
+    </div>
+
+    <br><hr><br>
+    <div id="div05">
+        <div class="box1">박스1</div>
+        <div class="box2">박스2</div>
+        <div class="box3">박스3</div>
+        <div class="box4">박스4</div>
+        <div class="box5">박스5</div>
+    </div>
+</body>
+</html>

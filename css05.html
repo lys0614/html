@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 5일차 200113</title>
+
+    <style>
+    /* border style
+        html태그의 외부 테두리 선의 스타일을 설정하는 CSS 속성
+        none(기본값), hidden, dashed, dotted, double, groove, inset, outset, ridge, solid */
+        #div01 > div{
+            width:200px;
+            height: 100px;
+            display:inline-block;
+            margin:15px;
+            border-width: 5px;
+            /* border-width 테두리 선 굵기 설정하는 속성 */
+        }
+        #div01 .box1{border-style:none;}
+        #div01 .box2{border-style:hidden;}
+        #div01 .box3{border-style:dashed;}
+        #div01 .box4{border-style:dotted;}
+        #div01 .box5{border-style:double;}
+        #div01 .box6{border-style:groove;}
+        #div01 .box7{border-style:inset;}
+        #div01 .box8{border-style:outset;}
+        #div01 .box9{border-style:ridge;}
+        #div01 .box10{border-style:solid;}
+
+        /* border-width
+            html태그의 외부 테두리 선의 굴기를 설정하는 속성.
+            border 속성처럼 한번에 4개의 방향 굵기를 설정함.
+            top,right,bottom,left 순으로 설정.
+            border-top/right/bottom/left-width
+            thin, medium, thick, 직접지정(px)
+            border-width에 값을 1개 입력 - 4방향 동일값
+            border-width에 값 2개 입력 - 앞에2개 top/bottom, 뒤에2개 right/left 값
+            */
+        #div02 > div{
+            width: 150px;
+            height: 150px;
+            display : inline-block;
+            margin:15px;
+            border-style:solid;
+        }
+        #div02 > .box1{border-width:medium;}
+        #div02 > .box2{border-width:5px;}
+        #div02 > .box3{border-width: thin thick;}
+        #div02 > .box4{border-width:5px 10px 15px 20px;}
+        #div02 > .box5{border-top-width: 10px;}
+        #div02 > .box6{border-right-width: 10px;}
+        #div02 > .box7{border-bottom-width:10px;}
+        #div02 > .box8{border-left-width:10px;}
+        
+        /* border-color 속성
+            html태그의 테두리 선의 색상을 설정하는 CSS 속성
+            미리정해놓은 색상이름, hex, rgb, hsl 코드 입력.
+            border-color 사용시 4개방향에 동일색상 적용
+            border-top,bottom,right,left-color를 사용하여 방향별로 색상설정가능 */
+            #div03 > div{
+            width:150px;
+            height:150px;
+            display:inline-block;
+            margin:15px;
+            border-style:solid;
+            border-width:10px;
+        }
+        #div03 > .box1{border-color:skyblue;}
+        #div03 > .box2{border-top-color:brown;}
+        #div03 > .box3{border-right-color:green;}
+        #div03 > .box4{border-bottom-color:pink;}
+        #div03 > .box5{border-left-color:peachpuff;}
+
+        /* border
+            html태그 테두리에 관련된 속성을 한줄에 입력하는 속성
+            border-top,right,bottom,left : @ 식으로 방향별로 정해줄 수도 있음. */
+        #div04 > div{
+            width:150px;
+            height:150px;
+            display:inline-block;
+            margin:15px;
+        }
+        #div04 > .box1{border:3px solid #ccc;}
+        #div04 > .box2{border-top:5px solid black;}
+        #div04 > .box3{border-right:7px dashed #acf;}
+        #div04 > .box4{border-bottom:9px dotted #AAf;}
+        #div04 > .box5{border-left:10px double #ccccaa;}
+
+        /* border-radius
+            html태그 테두리의 모서리 각도를 설정하는 속성 
+            border-radius 속성은 4개방향 각도를 동일하게 설정.
+            4개의 방향에 각각 따로 부여할수도 있음.
+            border-top-left-radius, border-top-right,radius,
+            border-bottom-left-radius, border-bottom-right-radius
+            1개의 값만 입력하면 4방향에 동일하게 주어짐.
+            2개의 값을입력하면 좌상단/우하단, 우상단/좌하단 순으로 적용됨.
+            3개의 값을 입력하면 좌상단, 우상단/좌하단, 우하단 순 
+            정수px, 백분율*/
+        #div05 > div{
+            width:150px;
+            height:150px;
+            display:inline-block;
+            margin:15px;
+            border:medium solid black;
+        }
+        #div05 > .box1{border-radius:20px;}
+        #div05 > .box2{border-top-left-radius: 30px;}
+        #div05 > .box3{border-top-right-radius: 40px;}
+        #div05 > .box4{border-bottom-left-radius: 50px;}
+        #div05 > .box5{border-bottom-right-radius: 60px;}
+        #div05 > .box6{border-radius:70px/150px;}
+        #div05 > .box7{border-radius:35%;}
+        #div05 > .box8{border-radius:20% 10%;}
+        #div05 > .box9{border-radius:10% 15% 20%;}
+        #div05 > .box10{border-radius:10% 15% 20% 25%; background:url("./apc.jpg");
+        background-size:cover;}
+
+        #q1 > div{
+            width:200px;
+            height:200px;
+            display:inline-block;
+            margin:15px;
+            border:2px dashed black;
+        }
+        #q1 > .q1box1{
+            border-radius:100px;
+            background:url("./apc.jpg") no-repeat center;
+        }
+        #q2 > div{
+            display:inline-block;
+            margin:15px;
+            border:2px dashed black;
+        }
+        #q2 > .q2box{
+            width:400px;
+            height:200px;
+            border-radius:200px / 100px;
+        }
+        #q2 > .q2box2{
+            width:200px;
+            height:400px;
+            border-radius:100px / 200px;
+        }
+        /* box-shadow
+            html 태그 태두리에 그림자넣는거 */
+        
+        /*  */
+        #div06 > .box1{padding:10px;}
+        #div06 > .box2{padding:10px 30px;}
+        #div06 > .box3{padding:10px 20px 30px 40px;}
+        #div06 > .box4{
+            padding-top:10px;
+            padding-right:20px;
+            padding-bottom:30px;
+            padding-left:40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">border style
+        <div class="box1">none border</div>
+        <div class="box2">hidden border</div>
+        <div class="box3">dashed border</div>
+        <div class="box4">dotted border</div>
+        <div class="box5">double border</div>
+        <div class="box6">groove border</div>
+        <div class="box7">inset border</div>
+        <div class="box8">outset border</div>
+        <div class="box9">ridge border</div>
+        <div class="box10">solid border</div>
+    </div>
+    <br><hr><br>
+    <div id="div02">
+        <div class="box1">medium border-width</div>
+        <div class="box2">숫자1개 border-width</div>
+        <div class="box3">thin thick border-width</div>
+        <div class="box4">숫자4개 border-width</div>
+        <div class="box5">border-top-width</div>
+        <div class="box6">border-right-width</div>
+        <div class="box7">border-bottom-width</div>
+        <div class="box8">border-left-width</div>
+    </div>
+    <br><hr><br>
+    <div id="div03">
+        <div class="box1">border-color</div>
+        <div class="box2">border-top-color</div>
+        <div class="box3">border-right-color</div>
+        <div class="box4">border-bottom-color</div>
+        <div class="box5">border-left-color</div>
+    </div>
+    <br><hr><br>
+    <div id="div04">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+    </div>
+    <br><hr><br>
+    <div id="div05">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+        <div class="box10"></div>
+    </div>
+    <br><hr><br>
+    <h3>문제1) border-radius속성을 사용하여 사각형 모양인 div를 원형으로 출력하고 배경 이미지도 출력하세요.</h3>
+    <h4>원형 지름의 크기는 200px, 타원x 온전한 원.
+        <br>테두리 선은 점선, 굵기는 2px
+    </h4>
+    <div id="q1">
+        <div class="q1box1"></div>
+    </div>
+    <br><hr><br>
+    <h3>문제2)문제1번을 기반으로 세로로 타원형인 원과 가로로 타원형인 원을 만드세요</h3>
+    <h4>기본 원의 크기 : 400x400</h4>
+    <div id="q2">
+        <div class="q2box"></div>
+        <div class="q2box2"></div>
+    </div>
+
+    <br><hr><br>
+    <div id="div06">
+        <div class="box1">padding이란 콘텐츠 영역과 테두리사이의 여백을 말합니다.</div>
+        <div class="box2">padding이란 콘텐츠 영역과 테두리사이의 여백을 말합니다.</div>
+        <div class="box3">padding이란 콘텐츠 영역과 테두리사이의 여백을 말합니다.</div>
+        <div class="box4">padding이란 콘텐츠 영역과 테두리사이의 여백을 말합니다.</div>
+    </div>
+</body>
+</html>
