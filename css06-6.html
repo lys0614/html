@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 6일차 6번파일</title>
+    <style>
+        /* visibility 속성
+            visible, hidden, collapse
+            html태그를 화면에서 출력하거나 숨기거나 하는 css속성
+            hidden : html태그를 화면에 보이지 않게 숨기지만 영역은 그대로 존재함. (opacity{투명화효과} : 0.0과 비슷한 효과.)
+            display:none 과는 다름, 이건 영역도 삭제함.
+
+            visible : 화면에 요소를 출력함.
+            
+            collapse : 잘안씀, 표에서 사용 시 서로 겹치도록 설정하는 속성. 그 이외의 영역에서는 hidden과 동일한 효과.
+            */
+        #div01 .box, .box1{
+            float:left;
+            width:33%;
+            padding:5px;
+            box-sizing:border-box;
+        }
+        #div01::after{
+            clear:both;
+            display:table;
+            content:"";
+        }
+        #div01 img{width:100%;}
+        #div01 .box1, .invisible{
+            visibility:hidden;
+            /* display:none; */
+            /* opacity:0.0; */
+        }
+
+        /* z-index
+            html의 적층 구조를 설정하는 css 속성 
+            html태그는 먼저 입력된 순서부터 아래에 깔리는 형태임.
+            z-index 사용 시 적층 레벨을 사용자가 직접 입력할 수 있음.
+            z-index:숫자;*/
+        
+        #div02{
+            width:500px;
+            height:500px;
+            background-color:darkcyan;
+            border:2px solid black;
+            position:relative;
+        }
+
+        #div02 .box{
+            width:150px;
+            height:150px;
+            position:absolute;
+        }
+
+        #div02 .red{
+            background-color:red;
+            top:0;
+            left:0;
+            z-index: 11
+        }
+        #div02 .green{
+            background-color:green;
+            top:75px;
+            left:75px;
+            z-index: 2;
+        }
+        #div02 .blue{
+            background-color:blue;
+            top:150px;
+            left:150px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div class="box">
+            <img src="./img_5terre.jpg" alt="">
+        </div>
+        <div class="box1">
+            <img src="./img_forest.jpg" alt="" class="invisible">
+        </div>
+        <div class="box">
+            <img src="./img_mountains.jpg" alt="">
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div02">
+        <div class="box red">z-index 11</div>
+        <div class="box green">z-index 2</div>
+        <div class="box blue">z-index 5</div>
+    </div>
+</body>
+</html>

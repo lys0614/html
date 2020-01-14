@@ -1,0 +1,21 @@
+#div01 > div{
+    box-sizing:border-box;
+}
+
+#div01 > .box{
+    width:33.3%;
+    padding:50px;
+    float:left;
+}
+
+#div01 > .box1{
+    background-color:#bbbbbb;
+}
+
+#div01 > .box2{
+    background-color:#aacccc;
+}
+
+#div01 > .box3{
+    background-color:#00d12d;
+}

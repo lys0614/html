@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 6일차 5번파일</title>
+    
+    <style>
+    /* position
+       html태그를 원하는 위치에 배치하기 위한 css 속성
+       static(기본값), relative, absolute, fixed
+       relative, absolute, fixed는 위치 좌표 속성 top, right, bottom,left 를 추가로 사용할 수 있음.
+        
+       static : 상대 위치 좌표 사용(먼저 사용된 다른 html태그의 위치에 따라 현재 html 태그의 위치가 정해짐.)
+       
+       relative : 상대 위치 좌표 사용(먼저 사용된 다른 html태그의 위치에 따라 현재 html 태그의 위치가 정해짐.) top, right, bottom, left를 사용함
+
+       absolute : 절대 위치 좌표 사용(다른 html태그의 위치와 상관없이 위치를 정할수 있음.) top, right, bottom, left를 사용함. 부모태그의 시작위치가 자신의 시작위치,
+       
+       fixed : 절대 위치 좌표 사용(다른 html태그의 위치와 상관없이 위치를 정할수 있음.) top, right, bottom, left를 사용함 body태그의 0,0 좌표가 시작위치임.
+       브라우저의 위치가 시작 위치.
+       
+       top : html이 그려질 기준을 지정하는 속성, 상단기준
+       right : html이 그려질 기준을 지정하는 속성, 우측기준
+       bottom : html이 그려질 기준을 지정하는 속성, 하단기준
+       left : html이 그려질 기준을 지정하는 속성, 좌측기준
+        따로 지정하지 않으면 top/left가 기준이 됨.
+        값을 음수로 입력시 그리는 방향이 반대가 됨.
+       */
+    
+    .box {
+        width:200px;
+        height:200px;
+        border:2px solid black;
+    }
+
+    .red{background-color:red;}
+    .green{background-color:green;}
+    .blue{background-color:blue;}
+
+    #div01 .red{position:static;}
+    #div01 .green{position:static;}
+    #div01 .blue{position:static;}
+
+    #div02 .red{
+        position:relative;
+        /* top:100px;
+        left:100px; */
+    }
+    #div02 .green{
+        position:relative;
+        left:100px;
+    }
+    #div02 .blue{
+        position:relative;
+        bottom:100px;
+        right:100px;
+    }    
+
+    #div03 {
+        background-color:gray;
+        position:relative;
+        width:500px;
+        height:500px;
+    }
+    #div03 .red{
+        position:absolute;
+        width:400px;
+        height:400px;
+    }
+    #div03 .green{
+        position:absolute;
+        width:300px;
+        height:300px;
+        /* top:30px;
+        left:30px; */
+        bottom:50px;
+        right:100px;
+    }
+    #div03 .blue{
+        position:absolute;
+        top:50px;
+        left:50px;
+    }
+
+    #div04 {
+        background-color:gray;
+        width:500px;
+        height:500px;
+    }
+
+    #div04 .red{
+        position:fixed;
+    }
+    
+    #div05::after{
+        clear:both;
+        display:table;
+        content:"";
+    }
+
+    #div05 .box1{
+        float:left;
+        width:100px;
+        background:#ffd800;
+        margin-right:10px;
+        padding:20px;
+    }
+    #div05 .box2{
+        position:relative;
+        left:-50px;
+        top:30px;
+        width:300px;
+        background:#0094ff;
+        float:left;
+        padding:20px;
+    }
+
+    #div06 {
+        /* 자식태그의 position값이 absolute이기 때문에 부모 태그에서는 position이 relative여야 함. */
+        position: relative;
+        width:300px;
+        height:300px;
+        border:1px solid #ccc;
+    }
+    #div06 > div{
+        /* 자식태그가 position:absolute 이면 부모 태그는 반드시
+        position:relative여야 한다. */
+        position:absolute;
+        width:50px;
+        height:50px;
+        background:#0094ff;
+    }
+    #div06 .box1{top:0; left:0;}
+    #div06 .box2{top:0; right:0;}
+    #div06 .box3{bottom:0; left:0;}
+    #div06 .box4{bottom:0; right:0;}
+    #div06 .box5{top:100px; left:100px;}
+    
+    /* position:sticky;
+        기본형태는 일반 html태그처럼 스크롤 되다가 특정 위치에 닿게되면 그곳에 붙어서 고정되는 속성 */
+
+    #div07 .sticky{
+        position:-webkit-sticky;
+        position:sticky;
+        top:20px;
+        padding:5px;
+        background-color:pink;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <h2>position 속성</h2>
+    <div id="div01">static
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+    <br><hr><br>
+    <div id="div02">relative
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>        
+    </div>
+    <br><hr><br>
+    <div id="div03">absolute
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>        
+    </div>
+    <br><hr><br>
+    <div id="div04">fixed
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div05">
+        <div class="box1">박스1</div>
+        <div class="box2">박스2</div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div06"><b>position:absolute</b>
+        <div class="box1">박스1</div>
+        <div class="box2">박스2</div>
+        <div class="box3">박스3</div>
+        <div class="box4">박스4</div>
+        <div class="box5">박스5</div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div07">
+        <div class="sticky">
+            <p>position:sticky 속성</p>
+        </div>
+        <div style="padding-bottom:2000px;">
+            <p>중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 내부규율에 관한 규칙을 제정할 수 있다.</p>
+
+            <p>공개하지 아니한 회의내용의 공표에 관하여는 법률이 정하는 바에 의한다. 국무총리는 국회의 동의를 얻어 대통령이 임명한다. 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다.</p>
+
+            <p>공무원은 국민전체에 대한 봉사자이며, 국민에 대하여 책임을 진다. 이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다.</p>
+        </div>
+    </div>
+</body>
+</html>
