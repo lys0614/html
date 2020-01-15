@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 7일차 5번파일</title>
+
+    <style>
+        embed{
+            width:70%;
+            height:800px;
+        }
+
+        .div1 #htmlobj{
+            width:100%;
+            height:800px;
+        }
+    </style>
+</head>
+<body>
+    <!-- html5를 이용한 멀티미디어 파일 재생
+        html5의 가장 큰 특징으로 외부 프로그램의 도움을 받지 않고 html만 사용하여 멀티미디어 파일을 재생할 수 있음.
+
+        <object>, <embed> 태그
+        현재 웹페이지에 외부 미디어 파일을 로드하여 화면에 출력. 
+        외부 문서를 로드하여 현재 웹페이지에 로드
+    object 태그는 현재 모든 웹 브라우저에서 지원함. 현재 웹페이지에 
+        다른 웹페이지의 내용을 로드하여 출력할 수 있음.
+    embed 태그는 오랫동안 사용되어온 외부파일 로드용 태그임.
+        html5부터 정식으로 html에서 지원함.
+    
+        미디어 파일 참조 사이트
+        http://www.iana.org/assignments/media-types/media-types.xhtml
+    
+    -->
+    <embed src="./media/LGV50.pdf" type="application/pdf"><br>
+    <object data="./media/LGV50.pdf" type="application/pdf" width="700" height="800"></object><br><br>
+    <hr>
+    <div class="div1">
+        <object data="./css07-4.html" type="text/html" id="htmlobj"></object>
+    </div>
+
+    <div class="div2">
+        <object data="./bg3.jpg" type=""></object>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 7일차 1번파일</title>
+    <style>
+    /* caption-side
+        table 사용 시 table의 제목 위치를 설정하는 css속성
+        top(기본값),bottom 값이 있음.*/
+        .div01 > .table1{
+            caption-side:top;
+        }
+        .div01 > .table2{
+            caption-side:bottom;
+        }
+        .div02 .cap{
+            border:2px solid black;
+        }
+        .div02 .table3 th, .div02 .table3 td{
+            border-bottom:2px solid black;
+        }
+
+    /* border-collapse
+        table에서 각 셀 사이의 공간 설정을 하는 CSS속성
+        collpase(공간 없음), separate(기본값, 공간 있음) */
+        .div03 .table4{
+        border:2px solid black;
+        border-collapse:separate;
+    }
+        .div03 table th, .div03 table td{
+        border:1px dashed black;
+        padding:10px;
+        text-align:center;
+    }
+        .div03 .table5{
+        border:2px solid black;
+        border-collapse:collapse;
+    }
+
+    /* border-spacing
+        border-collapse 속성 값을 separate 로 햇을경우 각 셀 사이의 거리를 설정하는 css 속성 
+        앞쪽의 값은 좌우 공간, 뒷쪽의 값은 상하공간.*/
+
+        .div04 table{
+        border:2px solid black;
+        border-collapse:separate;
+    }
+        .div04 table td{
+        border:1px solid black;
+        padding:10px;
+        text-align:center;
+    }
+        .div04 .table1{border-spacing:20px 10px;}
+        .div04 .table2{border-spacing:60px 60px;}
+
+    /* empty-cells
+        border-collapse 속성 값을 separate를 사용했을 경우 비어있는 셀을 화면에서 숨길지 여부를 설정하는 css속성 
+        show, hide 두개의 값*/
+
+        .div05 table{
+        border:2px solid black;
+        border-collapse:separate;
+    }
+        .div05 table td, .div05 table th{
+        border:1px solid black;
+        padding:10px;
+        text-align:center;
+    }
+        .div05 .table1 td, .div05 .table1 th{empty-cells:show;}
+        .div05 .table2 td, .div05 .table2 th{empty-cells:hide;}
+
+    /* table의 width, height
+        table의 너비와 높이를 설정하는 css 속성.
+        기존의 width, height속성과 동일한 방법.
+        테이블을 구성하는 각 태그에 width,height를 사용하면 각각의 너비와 높이를 설정할 수 있음. */
+
+        .div06 table{
+        border:2px solid black;
+        border-collapse:collapse;
+        /* width:500px; */
+    }
+        .div06 td{
+        padding:10px;
+    }
+        .div06 .table1 td, .div06 .table1 th{
+        border: 2px dashed black;
+        width:200px;
+    }
+
+    /* table-layout
+        table의 셀에 입력된 문자의 길이가 길 경우 td에 width를 설정했다해도 문자의 길이에 맞춰서 td의 길이가 변경됨.
+        이 때 table-layout 을 사용하면 td의 길이를 고정할 수 있음. 
+        auto(기본값, 문자의 길이에 맞춰 변경), fixed(고정) 값이 있음.
+        */
+        .div07 table{
+        border:1px solid black;
+        border-collapse:collapse;
+        width:300px;
+        height:auto;
+        word-break:break-all;
+    }
+        .div07 td{
+        width:150px;
+        border:1px dashed black;
+        padding:10px;
+    }
+        .div07 .table1{table-layout:auto;}
+        .div07 .table2{table-layout:fixed;}
+
+    /* vertical-align
+        표 내에서 수직 정렬 하는 css 속성
+        baseline : 인라인 요소의 기준선을 부모요소의 기준선에 맞춤. 
+        sub : 기준선을 부모요소의 아래 첨자 위치에 맞춤
+        super : 기준선을 부모요소의 위 첨자 위치에 맞춤
+        top : 인라인 요소의 윗부분을 부모요소의 윗부분에 맞춤
+        middle : 인라인 요소의 중앙부분을 부모 요소의 기준선에서 x-높이 의 반만큼 올려서 맞춤
+        bottom : 인라인 요소의 아랫부분을 부모 요소의 아랫부분에 맞춤
+        text-top : 인라인 요소의 윗부분을 부모 요소 글꼴의 윗부분에 맞춤
+        text-bottom : 인라인요소의 아랫부분을 부모요소 글꼴의 아랫부분에 맞춤
+        길이 값(px) : 기준선 0px로 생각하고 길이값이 양수면 기준선 위로, 음수면 기준선 아래로 지정한 크기만큼 옮김.
+        백분율값 : 기준선ㅇ르 0%로 생각하고 line-height의 몇%인지에 따라 양수면 위로, 음수면 아래로 옮김.
+        
+        표의 셀에서 사용할 경우
+        baseline : 셀의 기준선에 내용의 기준선을 맞춤.
+        top : 패딩의 위쪽 가장자리에 내용의 윗부분을 맞춤.
+        middle : 패딩박스 중앙에 내용을 맞춤
+        bottom : 패딩의 아래쪽 가장자리에 내용의 아랫부분을 맞춤.*/
+        .div08 table, .div08 td{
+            width:300px;
+            height:300px;
+            border:2px solid black;
+        }
+        .div08 .va1{vertical-align: top;}
+        .div08 .va2{vertical-align: middle;}
+        .div08 .va3{vertical-align: bottom;}
+        
+    /* 367p 연습문제 2번 */
+
+        .q2 .table1, td, th{
+            border:2px solid black;
+            border-collapse: collapse;
+            caption-side:bottom;
+        }
+        .q2 td, th{
+            padding:10px;
+        }
+        .q2 .heading{
+            background-color:#cc0;
+        }
+    </style>
+</head>
+<body>
+    <div class="div01">
+        <table class="table1" border="1">
+            <caption>ㅇㅇㅂㅂ개피곤 = caption-size:top;</caption>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>직업</th>
+                    <th>성별</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table2" border="1">
+            <caption>ㅇㅇㅂㅂ개피곤 = caption-size:bottom;</caption>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>직업</th>
+                    <th>성별</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <br><hr><br>
+    <!-- 문1) table을 생성하여 table태그의 border속성ㅇ르 사용하지 않고 CSS의 border속성만을 사용하여 테이블을 생성하세요
+    테이블의 겉 테두리부분 안보이게 함
+    각 내용의 밑 줄 부분만 출력하는 테이블 생성
+    머리글 부분은 실선, 내용 부분은 실선 -->
+
+    <div class="div02">
+        <table class="table3">
+            <caption class="cap">문제2</caption>
+            <thead>
+                <tr>
+                    <th>문제</th>
+                    <th>1번</th>
+                    <th>풀이</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div03">
+        <table class="table4">
+            <thead>
+                <tr>
+                    <th>문제</th>
+                    <th>무엇</th>
+                    <th>잠옴</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+            </tbody>
+            <table class="table5">
+                <thead>
+                    <tr>
+                        <th>문제</th>
+                        <th>무엇</th>
+                        <th>잠옴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                    </tr>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                    </tr>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                    </tr>
+                </tbody>
+            </table>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div04">
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>문제</th>
+                    <th>무엇</th>
+                    <th>잠옴</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+            </tbody>
+            <table class="table2">
+                <thead>
+                    <tr>
+                        <th>문제</th>
+                        <th>무엇</th>
+                        <th>잠옴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                    </tr>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                    </tr>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                    </tr>
+                </tbody>
+            </table>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div05">
+        <table class="table1"> emty-cells:show;
+            <thead>
+                <tr>
+                    <th>문제</th>
+                    <th>무엇</th>
+                    <th>잠옴</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <table class="table2"> empty-cells : hide;
+                <thead>
+                    <tr>
+                        <th>문제</th>
+                        <th>무엇</th>
+                        <th>잠옴</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>핵피곤</td>
+                        <td>피곤은</td>
+                        <td>간때문</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </table>
+    </div>
+    <br><hr><br>
+
+    <div class="div06">
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>문제</th>
+                    <th>무엇</th>
+                    <th>잠옴</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+                <tr>
+                    <td>핵피곤</td>
+                    <td>피곤은</td>
+                    <td>간때문</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div07">
+        <table class="table1">table-layout:auto;
+            <thead>
+                <tr>
+                    <th>문제</th>
+                    <th>무엇</th>
+                    <th>잠옴</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>핵피곤ddddddddddddddddddddddd</td>
+                    <td>피곤은ddddddddddddddddddddddd</td>
+                    <td>간때문ddddddddddddddddddddddd</td>
+                </tr>
+                <tr>
+                    <td>핵피곤ddddddddddddddddddddddddddd</td>
+                    <td>피곤은dddddddddddddddddddddddddd</td>
+                    <td>간때문ddddddddddddddddddddddd</td>
+                </tr>
+                <tr>
+                    <td>핵피곤ddddddddddddddddd</td>
+                    <td>피곤은dddddddddddddddddddddddd</td>
+                    <td>간때문ddddddddddddddddd</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table class="table2">table-layout:fixed;
+            <thead>
+                <tr>
+                    <th>문제</th>
+                    <th>무엇</th>
+                    <th>잠옴</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>핵피곤dddddddddddddddddddd</td>
+                    <td>피곤은dddddddddddddddddddd</td>
+                    <td>간때문dddddddddddddddddddddd</td>
+                </tr>
+                <tr>
+                    <td>핵피곤ddddddddddddddddddddd</td>
+                    <td>피곤은ddddddddddddddddddddddd</td>
+                    <td>간때문ddddddddddddddddddddddddd</td>
+                </tr>
+                <tr>
+                    <td>핵피곤dddddddddddddddddd</td>
+                    <td>피곤은dddddddddddddd</td>
+                    <td>간때문dddddddddddddddddddddddddd</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div08">
+        <table>
+            <caption>vertical-alignment</caption>
+            <tr>
+                <td class="va1">align</td>
+                <td class="va2">align</td>
+                <td class="va3">align</td>
+            </tr>
+        </table>
+    </div>
+
+    <br><hr><br>
+    <div class="q2">
+        <table class="table1">
+            <caption class="cap1">2015 국민 독서실태</caption>
+            <tr>
+                <th class="heading">구분</th>
+                <th class="heading">성인</th>
+                <th class="heading">학생</th>
+            </tr>
+            <tr>
+                <th class="heading">독서율</th>
+                <td>65.3%</td>
+                <td>94.9%</td>
+            </tr>
+            <tr>
+                <th class="heading">연평균 독서량</th>
+                <td>9.1권</td>
+                <td>29.8권</td>
+            </tr>
+            <tr>
+                <th class="heading">공공도서관 이용률</th>
+                <td>28.2%</td>
+                <td>64.9%</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
