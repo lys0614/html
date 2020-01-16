@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 8일차 0번파일</title>
+</head>
+<body>
+    <!-- html5에서 지원하는 미디어 파일
+        오디오 : mp3, ogg
+            mp3 : 라이선스 때문에 유료로 사용함. 대부분 음원에서 지원함.
+            ogg : mp3와 비슷한형태이지만 라이선스가 없음.
+            wav : 컴퓨터에서 사용하는 기본 음원 파일. 압축이 안되어잇음.
+        비디오 : mp4, webm, ogv 
+            mp4 : mp3와 동일한 파일이나 영상을 지원, 라이선스가 있지만 웹에서 사용하면 무료.
+            webm : 고화질, 무료 라는 특성때문에 웹에서 많이 사용됨. 웹에서 영상 스트리밍 할때 쓰려고 개발된거.
+            ogv : ogg에 영상이 추가된 형식. webm 이 나오기 전에 무료라는 특성때문에 많이 사용됨.
+
+        각 웹 브라우저마다 미디어를 지원하는 버전이 다르기때문에 확인이 필요함.
+
+        <audio> : html에서 오디오 파일을 재생하기위한 태그.
+            autoplay : 자동재생 속성 ( 최신 브라우저에서는 보안관련사항 때문에 동작하지 않을수 있음.)
+            controls : 웹 화면에 오디오 컨트롤 패널을 출력.
+            loop : 연속재생 속성.
+            mute : 소리 끔.
+            preload : 재생하기 전에 다운로드 해 준비해두게하는 속성.
+                auto, none, metadate 속성이 있음.
+            src : 재생할 음원의 경로.<source>태그를 주로 사용.
+    
+        <source> : html5의 <video>, <audio>, <picture> 태그의 미디어 요소에 대한 여러개의 미디어 리소스를 지정하는데 사용하는 태그. 웹 브라우저에서 지원하는 미디어 종류가 다르기때문에 모든 환경에서 정상적으로 이용할 수 있도록 하기 위함.
+            src : video, audio 등에서 사용할 미디어 파일의 경로
+            type : 사용할 미디어의 파일 형식
+            srcset : picture 에서 사용할 이미지 파일의 경로
+            media : CSS에서 정의된 미디어 쿼리
+            sizes : 이미지의 크기 설정
+        
+        <video>
+            html5에서 video 미디어를 출력하기위한 html 태그
+            html5 에서는 mp4, webm, ogv 미디어 파일을 공식 지원함
+            웹 브라우저의 종류에 따라서 지원하지 않는 미디어 파일이 있음.
+            <source>태그를 사용하여 여러개의 미디어 파일을 지원함.
+                autoplay, controls, muted, preload, src, width, height ,poster 속성이 있음.
+            
+        <ifame>
+            유튜브 영상 사용시 옵션(영상 링크 뒤에 ? 기호 이후 옵션 넣어야함)
+            autoplay : 자동재생(0 = 자동재생 안됨, 1 = 자동재생)
+            loop : 영상 반복재생(0 = 반복재생x, 1 = 반복재생),
+                playlist : 영상을 반복 재생하기 위한 리스트
+            controls : 컨트롤패널 출력(0 = x, 1 = o)
+            allow (acecelerometer, autoplay , picture-inpicture, encrypted-media, gyroscope 가 있어야 autoplay가 됨)
+                mute속성도 필요함.
+            -->
+    <h3>audio 기본 사용법.</h3>
+    <audio src="./media/Sleep Away.mp3" controls></audio>
+    <br><hr><br>
+
+    <div>
+        <h3>source를 활용한 audio 사용하기</h3>
+        <audio loop controls preload="none">
+            <source src="./media/Sleep Away.ogg" type="audio/ogg">
+            <source src="./media/Sleep Away.mp3" type="audio/mp3">
+        </audio>
+        <br>
+        <audio loop preload="metadata" muted>
+            <source src="./media/Sleep Away.ogg" type="audio/ogg">
+            <source src="./media/Sleep Away.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>video 태그 기본 사용</h3>
+        <video controls src="./media/Wildlife.mp4"></video>
+        <br>
+        <h3>source 태그를 사용한 video 태그 사용</h3>
+        <video controls loop poster="./images/apc.gif">
+            <source src="./media/Wildlife.webm" type="video/webm" />
+            <source src="./media/Wildlife.ogv" type="video/ogv" />
+            <source src="./media/Wildlife.mp4" type="video/mp4" />  
+        </video>
+    </div>
+
+    <br><hr><br>
+    <div>
+        <!-- youtube 영상 사용하기
+            <iframe> 태그, <object> 태그, <embed> 태그를 사용하여 youtube영상을 웹 페이지에 출력할 수 있음.
+            <iframe> : html5에서 지원하기 시작함. 현재 웹페이지에서 다른           웹페이지를 출력하기 위한 태그. html4에서도 지원하던 태그
+                html4에서 지원하던 속성 몇가지 제거 후 html5로 버전업 하면서 추가된 속성이 있음
+                src : 불러올 웹페이지의 경로
+                srcdoc : 불러올 웹 페이지의 html 코드
+                width, height : 외부 웹페이지가 출력될 화면의 너비, 높이
+                sandbox : iframe 콘텐츠의 추가 제한 사항(allow-fomrs, allow-pointer-lock, allow-popup, allow-same-origin, allow-scripts, allow-top-navigation)
+
+            https://developers.google.com/youtube/player_parameters?hl=ko#embedding_a_player
+             -->
+        <h3>html5를 사용하여 youtube 영상 로드하기</h3>
+        <iframe width="800" height="600" src="https://www.youtube.com/embed/2lV8EPFo95Y?autoplay=1&playlist=2lV8EPFo95Y&loop=1&controls=1" allow="acecelerometer; autoplay; encrypted-media; gyroscope; picture-inpicture;" frameborder="0"></iframe>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 8일차 1번파일</title>
+    <style>
+        .container{
+            position:relative;
+            text-align: center;
+            margin-top:30%;
+            margin-left:30%;
+        }
+        h2{
+            font-size: 2em;
+        }
+        h1{
+            font-size: 3.5em;
+        }
+        a:link, a:visited{
+            text-decoration: none;
+            color:#222222;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        #bg{
+            /* 배경 동영상 위치 고정 */
+            position:fixed;
+            /* 왼쪽과 위쪽에 여백 없이 채움. */
+            left:0;
+            top:0;
+            /* 동영상 너비와 높이를 화면에 꽉 차게 채움. */
+            width:auto;
+            height:auto;
+            min-width:100%;
+            min-height:100%;
+            /* z-index값을 줄여 다른요소 아래에 놓이게 함. */
+            z-index:-1000;
+            /* 동영상을 재생할 수 없을때 배경 이미지 추가. */
+            background:url("./bg1.png") left top no-repeat;
+            background-size:cover;
+        }
+
+    </style>
+</head>
+<body>
+    <video src="./media/Wildlife.mp4" autoplay loop muted poster="./bg1.png" id="bg"></video>
+    <div class="container">
+        <h2>타이틀</h2>
+        <h1><a href="#"></a></h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 8일차 4번파일</title>
+    <style>
+    /* 가상클래스 선택자
+        사용자의 사용에 따라서 선택 여부를 확인해 선택하는 선택자
+         :link = 아직 방문하지 않은 링크를 선택
+         :visited = 이미 방문한 링크를 선택
+         :active = 웹 요소를 활성화(동작)중일경우 선택
+         :hover = 마우스포인터를 올렸을때 선택하는 선택자
+         :focus = html태그에 초점이 맞춰졌을 때 선택하는 선택자.
+         */
+
+    /* 링크와 방문햇던 링크 스타일지정 */
+    .div01 a:link{
+        font-size:14px;
+        padding:10px;
+        text-decoration:none;
+    }
+    .div01 a:visited{
+        font-size:24px;
+        padding:20px;
+        text-decoration:none;
+        color:green;
+    }
+
+    /* 마우스를 올려놓거나 초점을 맞췄을 때 스타일 지정 */
+    .div01 a:hover, .div01 a:focus{
+        background-color:#222;
+        color:#fff;
+    }
+    /* 링크를 클릭했을때 스타일 지정 */
+    .div01 a:active{
+        background-color:#f00;
+    }
+
+    /* :checked
+        checkbox나 radiobox에 해당 항목이 선택되어있는지 확인하여 선택하는 선택자. */
+    /* input의 속성이 checked 일 시 형제 태그인 span에 속성부여하는 스타일시트 */
+    
+    .div02 input:checked + span{
+        color:red;
+    }
+
+    /* ::after, ::before
+     지정한 요소의 앞 혹은 뒤에 지정한 내용을 넣을 수 있음.*/
+
+    .div03 ul li{
+        margin:15px;
+    }
+    /* li 태그 면서 클래스명이 hot 인 태그의 뒤에 효과를 넣는 스타일시트. */
+    .div03 li.hot::after{
+        content:"NEW!!";
+        font-size:x-small;
+        padding:2px 4px;
+        margin:0 10px;
+        border-radius:2px;
+        background:#f00;
+        color:#fff;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="div01">
+        <ul>
+            <li><a href="#">이용 안내</a></li>
+            <li><a href="#">객실 소개</a></li>
+            <li><a href="#">예약 방법 및 요금</a></li>
+            <li><a href="#">예약하기</a></li>
+        </ul>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div02">
+        <form action="">
+            <fieldset>
+                <legend>신청 과목</legend>
+                <p>이달에 신청할 과목을 고르세요</p>
+
+                <label for=""><input type="radio" name="subject" value="speaking"><span>회화</span></label>
+                
+                <label for=""><input type="radio" name="subject" value="grammar"><span>문법</span></label>
+                
+                <label for=""><input type="radio" name="subject" value="writing"><span>작문</span></label>
+            </fieldset>
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div03">
+        <ul>
+            <li class="hot">제품1</li>
+            <li>제품2</li>
+            <li>제품3</li>
+            <li class="hot">제품4</li>
+        </ul>
+    </div>
+</body>
+</html>
