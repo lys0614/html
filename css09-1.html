@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 9일차 1번파일</title>
+    <style>
+        /* 트랜지션
+            html태그 요소의 style을 변경하는 것을 트랜지션이라 함.
+            transition, transition-property, transition-duration, transition-timing-function, transition-delay
+            
+            transition-property
+            트랜지션 대상을 설정하는 CSS 속성 
+            all(기본값), none, 속성이름
+            
+            transition-duration
+            트랜지션대상의 속성이 변경되는 시간을 설정하는 CSS 속성
+            기본값은 0 임.*/
+        .div01 > .tr1{
+            width:100px;
+            height:100px;
+            background-color:blue;
+            border:1px solid black;
+            -webkit-transition-property:width, height, background-color;
+            -moz-transition-property:width, height, background-color;
+            -o-transition-property:width, height, background-color;
+            -ms-transition-property:width, height, background-color;
+            transition-property:width, height, background-color;
+            -webkit-transition-duration:3s, 1s, 3s;
+            -moz-transition-duration:3s, 1s, 3s;
+            -o-transition-duration:3s, 1s, 3s;
+            -ms-transition-duration:3s, 1s, 3s;
+            transition-duration:3s, 1s, 3s;
+        }
+        
+        .div01 > .tr1:hover{
+            width:400px;
+            height:400px;
+            background-color:pink;
+        }
+
+        .div01 > .tr2{
+            width:200px;
+            height:200px;
+            background:red;
+            border:1px solid black;
+            transition-property:background-color, transform, width, height;
+            transition-duration: 3s, 2s;
+        }
+
+        .div01 > .tr2:hover{
+            width:400px;
+            height:400px;
+            background:gray;
+            transform:rotate(360deg);
+        }
+        /* transition-timing-function
+            transition 설정시 duration의 적용방식을 설정하는 css 속성
+            linear, ease(기본값), ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n) 
+            linear - 처음부터 끝까지 동일한 속도로 진행
+            ease - 처음엔 천천히, 점점빨라지다 마지막에 천천히
+            ease-in - 시작을 느리게
+            ease-out - 끝을 느리게
+            ease-in-out - 느리게 시작하고 느리게 끝냄
+            cubic-bezier(n,n,n) - 배치에 함수를 직접 정의하여 사용.     0~1 까지의 숫자 사용*/
+
+        .div02{
+            width:600px;
+        }
+        .div02 div{
+            display:block;
+            height:100px;
+            width:100px;
+            margin:10px 20px;
+            background:skyblue;
+            border:1px solid black;
+            font-weight:bolder;
+        }
+
+        .div02:hover div{
+            width:600px;
+        }
+        .div02 .linear{
+            transition:3s linear;
+        }
+        .div02 .ease{
+            transition:3s ease;
+        }
+        .div02 .ease-in{
+            transition:3s ease-in;
+        }
+        .div02 .ease-out{
+            transition:3s ease-out;
+        }
+        .div02 .ease-in-out{
+            transition:3s ease-in-out;
+        }
+        .div02 .cubic-bezier{
+            transition:3s cubic-bezier(0, 0, 1, 1)
+        }
+        /* transition-delay
+            html 태그으 속성을 변경할 경우 시작시간을 설정하는 속성 
+            기본값은 0*/
+        .div02 .cubic-bezier2{
+            transition:3s cubic-bezier(0.42, 0, 1, 0.1);
+            transition-delay:3s;
+        }
+        /* transition
+            transition-property, transition-duration, transition-delay, transition-timing-function의 값을 한번에 입력하기 위한 css 속성.
+             */
+        .div03 div{
+            width:300px;
+            height:200px;
+            background-color:red;
+            border:1px solid black;
+            transition:2s ease-in;
+        }
+
+        .div03 .tr1:hover{
+            width:100px;
+            height:100px;
+            background-color:pink;
+            transform:rotate(270deg);
+            border-radius: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div01">
+        <div class="tr1"></div>
+        <br>
+        <div class="tr2"><h1>돌아간다</h1></div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div02">
+        <div class="linear"> linear </div>
+        <div class="ease"> ease </div>
+        <div class="ease-in"> ease-in </div>
+        <div class="ease-out"> ease-out </div>
+        <div class="ease-in-out"> ease-in-out </div>
+        <div class="cubic-bezier"> cubic-bezier </div>
+        <div class="cubic-bezier2"> cubic-bezier2 </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div03">
+        <div class="tr1"></div>
+        <br>
+        <div class="tr2" style="text-align:center;"> ㅇㅅㅇ </div>
+    </div>
+</body>
+</html>

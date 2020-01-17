@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 9일차 3번파일</title>
+    <style>
+    /* css를 사용한 애니메이션 효과
+        css애니메이션은 css의 transition과 비슷한 형태를 가지고있음.
+        @keyframe 이라고 하는 애니메이션 시작/끝 지점을 가지고 있음.
+        @keyframe을 미리 생셩해 놓고 필요할 경우 가져다 사용하는 형태.
+
+        animation-delay : 애니메이션 지연 시간 설정. transition-delay와 동일
+        animation-direction : 애니메이션 종료 후 처음부터 시작할지, 역방향으로 진행할지를 지정.
+        animation-duration : 애니메이션 실행 시간을 설정. transition-duration 과 동일
+        animation-fill-mode : 애니메이션이 종료되거나 지연되어 애니메이션이 실행되지 않는 상태일때 요소의 스타일을 지정.
+        animation-iteration-count : 애니메이션의 반복 횟수 지정
+        animation-name : @keyframe으로 설정해놓은 중간상태의 이름을 지정
+        animation-play-state : 애니메이션을 멈추거나 다시 시작.
+        animation-timing-function : 애니메이션의 속도 곡선을 지정. transition-timing-function과 동일
+        animation : animation의 하위 속성을 한꺼번에 묶어 지정.
+
+        @keyframes
+        실제 애니메이션 효과를 생성하기 위해 시작 지점과 종료 지점을 지정하는 속성.
+        @keyframe 이름{
+            선택자{ <CSS 스타일 속성>}      <- @keyframe 의 기본 형태.
+        }
+
+     */
+     .div01{
+         width:100px;
+         height:100px;
+         background-color: pink;
+         animation-name:change-bg;
+         animation-duration:3s;
+         animation-fill-mode:backwards;
+     }
+     @-webkit-keyframes change-bg{
+         from{
+             background-color:pink;
+             border:1px solid black;
+         }
+
+         to{
+             background-color:blue;
+             border:1px solid black;
+             border-radius:50%;
+         }
+     }
+     @-moz-keyframes change-bg{
+         from{
+             background-color:pink;
+             border:1px solid black;
+         }
+
+         to{
+             background-color:blue;
+             border:1px solid black;
+             border-radius:50%;
+         }
+     }
+     @-o-keyframes change-bg{
+         from{
+             background-color:pink;
+             border:1px solid black;
+         }
+
+         to{
+             background-color:blue;
+             border:1px solid black;
+             border-radius:50%;
+         }
+     }
+     @-ms-keyframes change-bg{
+         from{
+             background-color:pink;
+             border:1px solid black;
+         }
+
+         to{
+             background-color:blue;
+             border:1px solid black;
+             border-radius:50%;
+         }
+     }
+     @keyframes change-bg{
+         from{
+             background-color:pink;
+             border:1px solid black;
+         }
+
+         to{
+             background-color:blue;
+             border:1px solid black;
+             border-radius:50%;
+         }
+     }
+
+     /* animation-name
+        keyframe을 통해서 생성된 애니메이션 효과를 실제 적용시키기 위해서 미리 생성된 keyframe의 이름을 설정하는 css 속성 */
+    </style>
+</head>
+<body>
+    <div class="div01"></div>
+</body>
+</html>
