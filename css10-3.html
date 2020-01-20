@@ -2,15 +2,217 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>css 10일차 3번파일</title>
     <style>
         /* 반응형 웹 디자인 */
         
+        /* viewport
+            viewport란 스마트폰 화면에서 실제 내용이 표시되는 영역
+            html의 meta태그를 사용하여 뷰포트를 설정함.
+            <meta name="viewport" content="속성1=값1, 속성2=값2 ...의 형태가 기본.
+            https://www.w3.org/TR/css-device-adapt-1/
+
+            viewport 속성
+            width : 뷰포트 너비, device-widtth 또는 크기
+            height : 뷰포트 높이, device-height 또는 높이 <- 잘안씀.
+            user-scaleable : 확대/축소 가능 여부,  yes or no(기본값 yes)
+            initial-scale : 초기 확대/축소 값, 1 ~ 10 까지(기본값 1)
+            minimum-scale : 최소 확대/축소 값, 0~10까지 (기본값 0.25)
+            maximum-scale : 최대 확대/축소 값, 0~10까지 (기본값 1.6)
+
+            고정 그리드 레이아웃
+            사이트 너비를 고정값으로 지정하여 화면의 크기가 언제나 동일한 형태의 레이아웃
+
+            가변 그리드 레이아웃
+            사이트 너비를 백분율로 지정하여 해상도의 크기에 따라 화면의 크기도 변하는 형태의 레이아웃
+             */
+            .div01 .wrapper{
+                width:960px;
+                margin:0 auto;
+            }
+
+            header{
+                width:960px;
+                height:120px;
+                background-color: dodgerblue;
+                border-bottom:1px solid black
+            }
+            .header-text{
+                font-size:40px;
+                color:white;
+                text-align:center;
+                line-height:120px;
+            }
+
+            .content{
+                float:left;
+                width:600px;
+                height: 400px;
+                padding:15px;
+                background-color:#ffd800;
+            }
+
+            .right-side{
+                float:right;
+                width:300px;
+                height:400px;
+                padding:15px;
+                background-color:#00ff90;
+            }
+            footer{
+                clear:both;
+                width:960px;
+                height:120px;
+                background-color:darkred;
+            }
+            /* ---------------------------------------------------- */
+            .div02 .wrapper{
+                width:96%;
+                margin:0 auto;
+            }
+
+            .div02 header{
+                width:100%;
+                height:120px;
+            }
+            .div02 .content{
+                float:left;
+                width:62.5%;
+                height:400px;
+                padding:1.5625%;
+                background-color:#ffd800;
+            }
+            .div02 .right-side{
+                float:right;
+                width:31.25%;
+                height:400px;
+                padding:1.5625%;
+                background-color:#00ff90;
+            }
+            .div02 .wrapper footer{
+                clear:both;
+                width:100%;
+                height:120px;
+                background-color: #c3590a;
+            }
+        /* 가변 글꼴
+        web 글꼴의 기본단위는 px임, em은 가변형 글꼴 단위.
+        1em=16px. em = x(글자크기px)/16px 
+        https://www.w3schools.com/cssref/css_pxtoemconversion.asp - 글꼴 크기 변환기
+        em단위로 작성된 글꼴은 브라우저 창에 표시될 경우 해당 기기에 맞는 픽셀값으로 자동 조정됨.
+        부모태그의 글자크기에 따라서 기준값이 되는 글자크기가 달라짐.
+        ex)부모태그에 font-size:20px이 주어졌다 -> em의 기준 글자크기값은 20px. 즉, 2em 하면 40px이 됨.
+
+        rem = em과 같은 효과지만 부모 태그의 font-size에 영향 받지 않고 기본값이 16px로 고정되어있는 em임.
+        */.div03 .wrapper{
+                width:96%;
+                margin:0 auto;
+                font-size:22px;
+            }
+
+            .div03 header{
+                width:100%;
+                height:120px;
+            }
+            .div03 .content{
+                float:left;
+                width:62.5%;
+                height:400px;
+                padding:1.5625%;
+                background-color:#ffd800;
+                text-align:center;
+                line-height:380px;
+            }
+            .div03 .right-side{
+                float:right;
+                width:31.25%;
+                height:400px;
+                padding:1.5625%;
+                background-color:#00ff90;
+                text-align: center;
+                line-height:380px;
+            }
+            .div03 .wrapper footer{
+                clear:both;
+                width:100%;
+                height:120px;
+                background-color: #c3590a;
+                text-align: center;
+            }
+        .div03 .header-text{font-size:2em;}
+        .div03 .content{font-size:1.5em;}
+        .div03 .right-side{font-size:1.5em;}
+        .div03 .footer{font-size:1.5em;}
+/* ---------------------------------------------------------------------- */
+        .div04 .wrapper{font-size:20px;text-align: center;}
+        .div04 .em{font-size:2em;}
+        .div04 .rem{font-size:2rem;}
     </style>
 </head>
 <body>
-    
+    <!-- 고정형 그리드 레이아웃 -->
+    <div class="div01">
+        <div class="wrapper">
+            <header>
+                <h1 class="header-text">고정 그리드 레이아웃</h1>
+            </header>
+            <section class="content">
+                <h4>본문
+            </section>
+            <aside class="right-side">
+                <h4>사이드바</h4>
+            </aside>
+            <footer class="footer">
+                copyright 2020 yangjung
+            </footer>
+        </div>
+    </div>
+
+    <br><hr><br>
+    <div class="div02">
+        <div class="wrapper">
+            <header>
+                <h1 class="header-text">가변 그리드 레이아웃</h1>
+            </header>
+            <section class="content">
+                <h4>본문</h4>
+            </section>
+            <aside class="right-side">
+                <h4>오른쪽 사이드</h4>
+            </aside>
+            <footer>
+                <h4>copyright yangjung 2020</h4>
+            </footer>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div03">
+        <div class="wrapper">
+            <header>
+                <h1 class="header-text">가변 그리드 레이아웃</h1>
+            </header>
+            <section class="content">
+                <h4>본문</h4>
+            </section>
+            <aside class="right-side">
+                <h4>오른쪽 사이드</h4>
+            </aside>
+            <footer class="footer">
+                <h4>copyright yangjung 2020</h4>
+            </footer>
+        </div>
+    </div>
+
+    <br><hr><br>
+    <div class="div04"><p style="text-align:center;">부모태그 바깥 16px기본글꼴</p>
+        <div class="wrapper"> 부모태그 20px 글꼴
+            <p class="em"> 가변 글꼴 2em=40px -> 기준값 : 부모 태그의 글꼴</p>
+            <p class="rem"> rem 가변 글꼴 2rem=32px-> 기준값 : 16px</p>
+        </div>
+    </div>
 </body>
 </html>
