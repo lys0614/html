@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 10일차 2번파일 연습문제</title>
+
+    <style>
+    
+    .div01 .box1{
+        width:100px;
+        height:100px;
+        background:darkgreen;
+        border:2px solid black;
+    }
+    .div01 .box1:hover{
+        transition-duration:1s;
+        background-color:yellow;
+        border-radius: 10%;
+    }
+    .div02 .img{
+        margin-left:20px;
+    }
+    .div02 .img:hover{
+        transform:rotate(20deg);
+        border:1px solid black;
+        border-radius: 10px;
+    }
+
+    .div03 .img2{
+        margin:50px;
+
+    }
+    .div03 .img2:hover{
+        animation-name:q3;
+            -webkit-animation-name:q3;
+            -moz-animation-name:q3;
+            -o-animation-name:q3;
+            -ms-animation-name:q3;
+        animation-duration:1s;
+            -webkit-animation-duration:1s;
+            -moz-animation-duration:1s;
+            -o-animation-duration:1s;
+            -ms-animation-duration:1s;
+        animation-direction:alternate;
+            -webkit-animation-direction:alternate;
+            -moz-animation-direction:alternate;
+            -o-animation-direction:alternate;
+            -ms-animation-direction:alternate;
+        animation-iteration-count:infinite;
+            -webkit-animation-iteration-count:infinite;
+            -moz-animation-iteration-count:infinite;
+            -o-animation-iteration-count:infinite;
+            -ms-animation-iteration-count:infinite;
+    }
+    @-webkit-keyframes q3{
+        from{
+            margin:50px;
+            transform:scale(1.0)
+        }
+        to{
+            transform-origin: left top;
+            transform:scale(1.5);
+            box-shadow:5px 5px 3px black;
+        }
+    }
+    @-moz-keyframes q3{
+        from{
+            margin:50px;
+            transform:scale(1.0)
+        }
+        to{
+            transform-origin: left top;
+            transform:scale(1.5);
+            box-shadow:5px 5px 3px black;
+        }
+    }
+    @-o-keyframes q3{
+        from{
+            margin:50px;
+            transform:scale(1.0)
+        }
+        to{
+            transform-origin: left top;
+            transform:scale(1.5);
+            box-shadow:5px 5px 3px black;
+        }
+    }
+    @-ms-keyframes q3{
+        from{
+            margin:50px;
+            transform:scale(1.0)
+        }
+        to{
+            transform-origin: left top;
+            transform:scale(1.5);
+            box-shadow:5px 5px 3px black;
+        }
+    }
+    @keyframes q3{
+        from{
+            margin:50px;
+            transform:scale(1.0)
+        }
+        to{
+            transform-origin: left top;
+            transform:scale(1.5);
+            box-shadow:5px 5px 3px black;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <!-- 연습문제 1번
+    마우스 포인터를 올렸을 때 변화하게 transition 속성을 적용하세요 -->
+
+    <div class="div01">
+        <div class="box1"></div>
+    </div>
+
+    <br><hr><br>
+
+    <!-- 연습문제 2번
+        이미지 위로 마우스 포인터를 올렸을 때 변형되도록 소스를 적용하세요 -->
+
+    <div class="div02">
+            <img src="./apc.jpg" alt="" class="img">
+    </div>
+
+    <br><hr><br>
+
+    <!-- 연습문제 3번
+    transition과 transform속성을 이용해 사진 위로 마우스를 올려놓을 경우 사진이 확대되는 애니메이션을 만드세요 -->
+    
+    <div class="div03">
+        <img src="./bg3.jpg" alt="" class="img2">
+    </div>
+</body>
+</html>

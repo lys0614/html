@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 10일차 </title>
+    <style>
+    /* animation-name
+        keyframe을 통해서 생성된 애니메이션 효과를 실제 적용시키기 위해서 미리 생성된 keyframe의 이름을 설정하는 css 속성 
+        animation-name:keyframe이름; 의 형태.
+        자바스크립트 함수선언방식과 비슷함.
+
+        animation-duration
+        애니메이션이 동작하는 시간을 설정함.
+        사용값:s(초),0(기본값)
+        
+        animation-direction
+        애니메이션이 끝나고 되돌아가게 하거나 반대방향으로 애니메이션을 한번 더 진행하게 설정할 수 있음.
+        normal(기본값), alternate(반대방향으로 한번더 진행하면서 돌아감)
+
+        animation-iteration-count
+        애니메이션을 반복할 횟수를 정하는 속성.
+        숫자, infinite.
+
+        animation-timing-function
+        transition-timing-function 과 동일한 효과를 가짐.
+        시작과 중간 끝의 속도를 선택할수 있음.
+        linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n)
+          
+        */
+
+    .div01 div{
+        width:100px;
+        height:100px;
+        background:greenyellow;
+        float:left;
+        margin:50px;
+        padding:20px;
+    }
+    .div01 .box1{
+        background-color:#4cff00;
+        border:1px solid black;
+        animation-name:shape;
+        -webkit-animation-name:shape;
+        -moz-animation-name:shape;
+        -o-animation-name:shape;
+        -ms-animation-name:shape;
+        animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+        -moz-animation-duration: 2s;
+        -o-animation-duration: 2s;
+        -ms-animation-duration: 2s;
+        animation-direction:alternate;
+        -webkit-animation-direction:alternate;
+        -moz-animation-direction:alternate;
+        -o-animation-direction:alternate;
+        -ms-animation-direction:alternate;
+        animation-iteration-count: infinite;
+    }
+    .div01 .box2{
+        background-color:8f06b0;
+        animation-name:rotate;
+        -webkit-animation-name:rotate;
+        -moz-animation-name:rotate;
+        -o-animation-name:rotate;
+        -ms-animation-name:rotate;
+        animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+        -moz-animation-duration: 2s;
+        -o-animation-duration: 2s;
+        -ms-animation-duration: 2s;
+        animation-direction:alternate;
+        -webkit-animation-direction:alternate;
+        -moz-animation-direction:alternate;
+        -o-animation-direction:alternate;
+        -ms-animation-direction:alternate;
+        animation-iteration-count:infinite;
+    }
+    .div01::after{
+        clear:both;
+        display:table;
+        content:"";
+    }
+    @keyframes shape{
+        from{
+            border:1px solid black;
+        }
+        to{
+            border:3px solid black;
+            border-radius: 50%;
+        }
+    }
+    @-webkit-keyframes shape{
+        from{
+            border:1px solid black;
+        }
+        to{
+            border:3px solid black;
+            border-radius: 50%;
+        }
+    }
+    @-moz-keyframes shape{
+        from{
+            border:1px solid black;
+        }
+        to{
+            border:3px solid black;
+            border-radius: 50%;
+        }
+    }
+    @-o-keyframes shape{
+        from{
+            border:1px solid black;
+        }
+        to{
+            border:3px solid black;
+            border-radius: 50%;
+        }
+    }
+    @-ms-keyframes shape{
+        from{
+            border:1px solid black;
+        }
+        to{
+            border:3px solid black;
+            border-radius: 50%;
+        }
+    }
+
+    @keyframes rotate{
+        from{
+            transform:rotate(0deg);
+        }
+        to{
+            transform:rotate(45deg);
+        }
+    }
+    @-webkit-keyframes rotate{
+        from{
+            transform:rotate(0deg);
+        }
+        to{
+            transform:rotate(45deg);
+        }
+    }
+    @-moz-keyframes rotate{
+        from{
+            transform:rotate(0deg);
+        }
+        to{
+            transform:rotate(45deg);
+        }
+    }
+    @-o-keyframes rotate{
+        from{
+            transform:rotate(0deg);
+        }
+        to{
+            transform:rotate(45deg);
+        }
+    }
+    @-ms-keyframes rotate{
+        from{
+            transform:rotate(0deg);
+        }
+        to{
+            transform:rotate(45deg);
+        }
+    }
+    .div02 .box1{
+        margin-top:50px;
+        margin-left:50px;
+        padding:20px;
+        height:60px;
+        animation-name:moving;
+        animation-duration:2s;
+        animation-direction:alternate;
+        animation-iteration-count:infinite;
+    }
+    @keyframes moving{
+        0% {
+            width:200px;
+            background:orange;
+            opacity:0.5;
+            transform:scale(0.5) rotate(15deg);
+        }
+        100%
+        {
+            width:400px;
+            background:red;
+            opacity:1;
+            transform:scale(1) rotate(0deg);
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div class="div01">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div02">
+        <div class="box1"></div>
+    </div>
+</body>
+</html>
