@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 11일차 0번파일</title>
+    <style>
+    /* 가변이미지
+        화면의 크기에 따라서 여러가지 크기의 이미지를 사용하는 방식.
+        max-width / min-width
+          너비를 지정하는 width 속성에서 파생된 속성으로 해당 요소의 최소/최대 크기를 설정하는 css 속성
+        max-height / min-height
+          높이를 설정하는 height 속성에 파생된 속성으로 해당 요소의 최소/최대 높이를 설정하는 css 속성
+         */
+        .div01 {
+            width:96%;
+            margin: 0 auto; /* 중앙 정렬 */
+        }
+        .div01 header{
+            width:100%;
+            height:120px;
+            background-color:#0066cf;
+            border:1px solid black;
+        }
+        .div01 .header-text{
+            font-size:32px;
+            color:white;
+            text-align:center;
+            line-height:120px;
+            }
+        .div01 .content{
+            float:left;
+            width:62.5%;
+            height:400px;
+            padding:1.5625%;
+            background-color:#ffd800;
+        }
+        .div01 .side{
+            float:right;
+            width:31.25%;
+            height:400px;
+            padding:1.5625%;
+            background-color:#00ff90;
+        }
+        .div01 main::after{
+            clear:both;
+            display:table;
+            content:"";
+        }
+        .div01 footer{
+            width:100%;
+            height:120px;
+            background-color:#c3590a;
+            
+        }
+        
+        .content .img{
+            max-width:100%;
+            height:auto;
+        }
+
+        .div02 .img-file{
+            width:100%;
+        }
+        /* picture
+        상황별로 이미지 파일을 변경하여 사용할 수 있또록 해주는 html 태그
+        source 태그와 함께 사용행햐ㅏㅁ */
+    </style>
+</head>
+<body>
+    <div class="div01">
+        <header>
+            <h1 class="header-text">가변 그리드 레이아웃</h1>
+        </header>
+        <main>
+            <section class="content">
+                <h4>본문</h4>
+                <img class="img" src="./images/002.jpg" alt="">
+            </section>
+            <aside class="side">
+                <h4>사이드바</h4>
+            </aside>
+        </main>
+        <footer>
+            <h4>copyright yangjung 2020</h4>
+        </footer>
+    </div>
+
+    <br><hr><br>
+    <div class="div02">
+        <source srcset="./bg3.jpg" media="(min-width:1024px)" />
+        <source srcset="./apc.jpg" meida="(min-width:768px)"/>
+        <source srcset="./media/apc.gif" media="(min-width:320px)"/>
+        <img src="apc.jpg" class="img-file">
+    </div>
+</body>
+</html>

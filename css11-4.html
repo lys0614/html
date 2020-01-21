@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 11일차 4번파일</title>
+  
+    <style>
+        body{
+            background:url("./images/bg0.jpg") no-repeat fixed;
+            background-size:cover;
+        }   
+    </style>
+    <!-- link태그를 이용하여 css 파일 로드 -->
+    <!-- 화면의 크기에 따라 로드하는 파일을 다르게 설정함.
+    link태그에 media 속성을 추가하여 css 파일 로드 조건을 입력함. -->
+      <link rel="stylesheet" href="max992.css" media="screen and (max-width:992px)">
+      <link rel="stylesheet" href="max768.css" media="screen and (max-width:768px)">
+
+    <!-- style tag를 이용하여 상황별 css속성 사용
+    style tag에 media 속성을 사용하여 화면 크기에따라 CSS 속성을 달리함.
+    style tag 내에 @media 미디어쿼리를 사용하여 css속성을 달리하느 방법. 
+
+    외부 css 파일에 media query를 사용한느 방법
+    외부 css 파일 내에 화면을 꾸미는 css 속성을 입력한 후 아래쪽에 media query를 작성하여 해당 파일을 로드하여 사용.-->
+</head>
+<body>
+    
+</body>
+</html>
