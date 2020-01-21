@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 11일차 5번파일</title>
+
+    <style>
+    /* CSS Flexible box layout
+    flexible box 이전의 레이아웃
+    -테이블을 이용한 레이아웃
+    -div를 이용한 레이아웃
+    -섹션을 기준으로 한 레이아웃 
+    
+    디자이너가 모든 화면의 레이아웃을 결정해야함,여러 웹 페이지를 개발 시 각각 다른 크기의 페이지가 만들어져야함,
+    웹 페이지의 레이아웃을 쉽게 구성하기 위해 개발한 방법이 GRID System, Flexbox 이다.
+
+    Flexbox를 여러개 이용해서 레이아웃을 구성하는 것을 flexible box layout이라 한다.
+    flexbox를 사용하려면 부모태그에 display:flex; 속성이 추가되어야 한다.
+
+    flexbox의 속성    
+    */
+    .div01 {
+        display:flex;
+        background-color:dodgerblue;
+    }
+    .div01 > div{
+        background-color:#f1f1f1;
+        margin:10px;
+        padding:20px;
+        font-size:32px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* - flex-direction : 플렉스박스의 방향을 설정.
+        - row, row-renverse, column, column-renverse
+            row(기본값) : 왼쪽에서 오른쪽으로. 주축가로 교차축세로
+            row-reverse : 오른쪽에서 왼쪽으로.
+            column : 위에서 아래로 주축세로 교차축가로
+            column-reverse : 아래에서 위로 */
+
+    .div03 > .flex{
+        display:flex;
+        background-color:dodgerblue;
+        /* flex-direction: row; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column; */
+        /* flex-direction: column-reverse; */
+    }
+
+    .div03 > .flex > div {
+        background-color:#f1f1f1;
+        margin:10px;
+        padding:20px;
+        text-align:center;
+        line-height:75px;
+        font-size:32px;
+    }
+
+    /* ---------------------------------------------------------- */
+    /* - flex-wrap : 플렉스 박스의 줄바꿈 설정
+        - no-wrap, wrap, wrap-reverse
+            no-wrap : 플렉스 항목을 한줄에 출력(기본값)
+            wrap : 플렉스 항목을 여러줄에 출력
+            wrap-reverse : 플렉스 항목을 여러줄에 표시하되 반대방향으로. */
+
+    .div04 > .flex-wrap {
+        display:flex;
+        background-color:dodgerblue;
+        flex-wrap:nowrap;
+        /* flex-wrap: wrap; */
+        /* flex-wrap:wrap-reverse; */
+    }
+
+    .div04 .flex-wrap > div{
+        background-color:#f1f1f1;
+        width:100px;
+        margin:10px;
+        padding:20px;
+        text-align:center;
+        line-height:75px;
+        font-size:32px;
+    }
+    /* -------------------------------------------------------- */
+    /* flex-flow 속성
+        flex속성을 한줄에 입력하는 속성, 입력 순서는 direction. wrap순서로 */
+    .div05 .flex{
+        background-color:dodgerblue;
+        display:flex;
+        flex-flow:row wrap;
+        /* flex-flow:row-reverse nowrap;
+        flex-flow:column wrap;
+        flex-flow:column-reverse wrap-reverse; */
+    }
+    .div05 .flex > div{
+        background-color:#f1f1f1;
+        width:100px;
+        margin:10px;
+        padding:20px;
+        text-align:center;
+        line-height:75px;
+        font-size:32px;
+    }
+    /* -------------------------------------------------------- */
+    /* - justify-content : 플렉스 박스의 정렬 설정 
+            - center : 중앙 정렬
+            - flex-start : 왼쪽 정렬(기본값)
+            - flex-end : 오른쪽 정렬
+            - space-around : 적정한 공간 분배
+            - space-between : 양끝 정렬(양끝에 정렬되고 적정한 공간 분배)
+    */
+    
+    .div06 .flex{
+        background-color:dodgerblue;
+        display:flex;
+        /* justify-content:center; */
+        /* justify-content:flex-start; */
+        justify-content:flex-end;
+        /* justify-content:space-around; */
+        /* justify-content:space-between; */
+    }
+    .div06 .flex > div{
+        background-color:#f1f1f1;
+        width:100px;
+        margin:10px;
+        padding:20px;
+        text-align:center;
+        line-height:75px;
+        font-size:32px;
+    }
+    /* -------------------------------------------------------- */
+    /* align-items : 교차축 기준의 배치 방법 설정 
+        - center : 교차축의 중앙을 기준
+        - baseline : 시작점과 글자 기준선이 가장 먼 플렉스 항목을 시작점에 배치, 글자의 기준선과 다른항목의 기준선을 맞추어 배치.
+        - stretch : 플렉스 항목을 확장해 교차측을 꽉 채움.(기본값)
+        - flex-start : 교차축의 시작점을 기준으로 배치
+        - flex-end : 교차축의 끝점을 기준으로 배치.
+    */
+    .div07 .flex{
+        background-color:dodgerblue;
+        display:flex;
+        align-items:center;
+        height:300px;
+        align-items:baseline;
+        /* align-items:stretch; */
+        /* align-items:flex-start; */
+        /* align-items:flex-end; */
+        /* align-items:center; */
+    }
+
+    .div07 .flex > div{
+        background-color:#f1f1f1;
+        width:100px;
+        margin:10px;
+        padding:20px;
+        text-align:center;
+        line-height:20px;
+        font-size:32px;
+    }
+/* -------------------------------------------------------- */
+    /* - align-content : 플렉스 박스가 여러줄일때 배치 방법 설정
+        속성이 justify-content 와 비슷함. flex-wrap 의 속성을 wrap이나 wrap-reverse 일 경우 사용 가능.
+        - stretch : 플렉스 박스가 여러줄로 표시될때 세로로 해당 줄을 꽉 채움.
+        - flex-start : 플렉스박스가 여러줄로 표시될때 왼쪽정렬, 위에서 아래 정렬사용 (기본값)
+        - flex-end : 플렉스박스가 여러줄로 표시될때 왼쪽정렬, 아래에서 위 정렬사용
+        - center : 플렉스 박스가 여러줄로 표시될때 가운데 정렬,
+        - space-between : 플렉스 박스가 여러줄로 표시될때 상하 양쪽 정렬, 여유공간을 두지 않음.
+        - space-around : 플렉스 박스가 여러줄로 표시될때 상하 양쪽 정렬, 적절한 공간을 자동으로 가지고 있음.
+    */
+
+    .div08 .flex{
+        background-color:dodgerblue;
+        display:flex;
+        height:600px;
+        flex-wrap: wrap;
+        /* flex-wrap:wrap-reverse; */
+        /* align-content:flex-start; */
+        /* align-content:flex-end; */
+        /* align-content:center; */
+        align-content:space-between;
+        /* align-content:space-around; */
+        /* align-content:stretch; */
+
+    }
+    .div08 .flex > div{
+        background-color:#f1f1f1;
+        width:100px;
+        margin:10px;
+        padding:20px;
+        text-align:center;
+        line-height:75px;
+        font-size:32px;
+    }
+    </style>
+</head>
+<body>
+    <div class="div01">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div03">
+        <h3>flex-direction 사용하기</h3>
+        <div class="flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+
+    <div class="div04">
+        <h3>flex-wrap 사용하기</h3>
+        <div class="flex-wrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+    </div>
+
+<br><hr><br>
+
+    <div class="div05">
+        <h3>flex-wrap 사용하기</h3>
+        <div class="flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+    </div>
+
+<br><hr><br>
+
+    <div class="div06">
+        <h3>justify-content 사용하기</h3>
+        <div class="flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </div>
+
+<br><hr><br>
+    <div class="div07">
+        <h3>align-items 사용하기</h3>
+        <div class="flex">
+            <div><h1>1</h1></div>
+            <div><h3>2</h3></div>
+            <div><h4>3</h4></div>
+        </div>
+    </div>
+
+<br><hr><br>
+
+    <div class="div08">
+        <h3>align-content 사용하기</h3>
+        <div class="flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+    </div>
+
+</body>
+</html>
