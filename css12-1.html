@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 12일차 1번</title>
+    
+    <style>
+        /* 메뉴를 스마트폰 화면메뉴로 변경 */
+        * {
+            box-sizing:border-box;
+        }
+        .div01{
+            overflow:hidden;
+            background-color:#333333;
+        }
+        .div01 a{
+            float:left;
+            display:block;
+            color:#f2f2f2;
+            text-align:center;
+            padding:14px 16px;
+            text-decoration:none;
+        }
+        .div01 a:hover{
+            background-color:#dddddd;
+            color:black;
+        }
+        .div01::after{
+            clear:both;
+            display: table;
+            content:"";
+        }
+        
+
+/* ---------------------------------------------------------------------- */
+
+        .div02 *{box-sizing:border-box;}
+        
+        .div02 .column{
+            float:left;
+            width:25%;
+            padding:20px;
+
+        }
+
+        .div02 .row::after{
+            clear:both;
+            display:table;
+            content:"";
+        }
+
+        .div03 .hidden{
+            padding:20px;
+            background-color:pink;
+        }
+
+        .div04 .fontsize > h1{
+            font-size:80px;
+            background-color:lightgray;
+            padding:20px;
+        }
+
+        .div05 * {box-sizing:border-box;}
+
+        .div05 .row{
+            /* flex box 사용을 위한 조건. */
+            display:flex;/* flexbox 사용 */
+            flex-wrap:wrap;/* 자동 줄바꿈 */
+        }
+
+        .div05 .column{
+            flex:25%;
+            padding:20px;
+        }
+/* ---------------------------------------------------------------------- */
+        /* 화면 크기에 따른 이미지 출력 변환*/
+        .div06 *{
+            box-sizing:border-box;
+            margin:0;
+            }
+        .div06 header{
+            text-align:center;
+            padding:32px;
+        }
+        .div06 main .row{
+            /* flex box 사용을 위한 조건. */
+            display:flex;/* flexbox 사용 */
+            flex-wrap:wrap;/* 자동 줄바꿈 */
+            padding:0 4px;
+        }
+        .div06 main .column{
+            flex:25%;
+            max-width:25%;
+            padding: 0 4px;
+        }
+        .div06 main img{
+            width:100%;
+            margin-top:8px;
+            vertical-align:middle;
+        }
+/* ---------------------------------------------------------------------- */
+        @media screen and (max-width:992px){
+
+        }
+        @media screen and (max-width:768px){
+            .div02 .column{
+                width:50%;
+            }
+
+            .div05 .column{
+                flex:50%;
+            }
+            .div06 main .column{
+                flex:50%; /*flex box의 너비를 50%로 설정*/
+                max-width:50%;/*column의 최대 너비를 50%로 설정*/
+            }
+        }
+
+        @media screen and (max-width:576px){
+            .div01 a{
+                float:none;
+                width:100%;
+            }
+
+            .div02 .column{
+                width:100%;
+            }
+
+            .div03 .hidden{
+                /* visibility:hidden; */
+                /* opacity: 0.0; */
+                display:none;
+            }
+            
+            .div04 .fontsize > h1{
+                font-size:30px;
+            }
+
+            .div05 .column{
+                flex:100%;
+                flex-direction:column;
+            }
+            .div06 main .column{
+                flex:100%;
+                max-width:100%;
+                flex-direction:column;
+            }
+        }
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <div class="contaniner01">
+        <h2> 화면 크기에 따라서 메뉴의 형태 변경</h2>
+    <p>화면의 너비 576px 이상일 경우 이상일 경우에는 기본적인 가로 메뉴로 출력</p>
+    <p>화면의 너비 576px 미만일 경우 세로형 메뉴로 출력 </p>
+    <div class="div01">
+        <a href="#">메뉴1</a>
+        <a href="#">메뉴2</a>
+        <a href="#">메뉴3</a>
+        <a href="#">메뉴4</a>
+    </div>
+    </div>
+    
+    <br><hr><br>
+
+    <div class="div02">
+        <h2>화면 크기에 따라서 레이아웃 변경</h2>
+        <div class="row">
+            <div class="column" style="background-color: #aaaaaa;">
+                <h2>column1</h2>
+                <p>첫번째 공간</p>
+            </div>
+            <div class="column" style="background-color: #bbbbbb;">
+                <h2>column2</h2>
+                <p>두번째 공간</p>
+            </div>
+            <div class="column" style="background-color: #cccccc;">
+                <h2>column3</h2>
+                <p>세번째 공간</p>
+            </div>
+            <div class="column" style="background-color: #dddddd;">
+                <h2>column4</h2>
+                <p>네번째 공간</p>
+            </div>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div03">
+        <h2>화면 너비에 따라서 html 태그 숨기기</h2>
+        <br>
+        <div class="hidden">
+            <h1>숨겨질 html</h1>
+            <p>화면의 너비거 576px 미만일경우 화면에서 숨김</p>
+        </div>
+        <div>
+            <br>
+            <p>화면의 크기에 상관없이 출력</p>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div04">
+        <h2>화면의 크기에 따라 폰트크기변경</h2>
+        <div class="fontsize">
+            <h1>크기 변경될 글자</h1>
+        </div>
+        <p>화면 크기에 상관없이 출력될 부분.</p>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div05">
+        <h2>flexbox를 사용하여 화면 크기에 따라 공간 설정하기.</h2>
+        <p>화면 너비 768 px 이상일 경우 한줄에 모든 column이 출력.</p>
+        <p>화면너비 768px 미만일경우 한줄에 2 column 출력</p>
+        <p>화면너비 576px 미만일 경우 한줄에 1 column 출력</p>
+        <div class="row">
+            <div class="column" style="background-color:#aaaaaa;">
+                <h2>flexbox column1</h2>
+                <p>flex box를 사용하여 공간 설정</p>
+            </div>
+            <div class="column" style="background-color:#bbbbbb;">
+                <h2>flexbox column2</h2>
+                <p>flex box를 사용하여 공간 설정</p>
+            </div>
+            <div class="column" style="background-color:#cccccc;">
+                <h2>flexbox column3</h2>
+                <p>flex box를 사용하여 공간 설정</p>
+            </div>
+            <div class="column" style="background-color:#dddddd;">
+                <h2>flexbox column4</h2>
+                <p>flex box를 사용하여 공간 설정</p>
+            </div>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="div06">
+        <header>
+            <h1>반응형 웹을 적용한 이미지 갤러리</h1>    
+            <p>화면의 너비에 따라 이미지를 출력하는 방식이 변경.</p>
+        </header>
+        
+        <main>
+            <div class="row">
+                <div class="column">
+                    <img src="./images/wedding.jpg" alt="">
+                    <img src="./images/rocks.jpg" alt="">
+                    <img src="./images/falls2.jpg" alt="">
+                    <img src="./images/paris.jpg" alt="">
+                    <img src="./images/nature.jpg" alt="">
+                    <img src="./images/mist.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="./images/underwater.jpg" alt="">
+                    <img src="./images/ocean.jpg" alt="">
+                    <img src="./images/nature.jpg" alt="">
+                    <img src="./images/rocks.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="./images/falls2.jpg" alt="">
+                    <img src="./images/mountainskies.jpg" alt="">
+                    <img src="./images/wedding.jpg" alt="">
+                    <img src="./images/rocks.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="./images/nature.jpg" alt="">
+                    <img src="./images/ocean.jpg" alt="">
+                    <img src="./images/paris.jpg" alt="">
+                    <img src="./images/wedding.jpg" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

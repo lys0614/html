@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 12일차 0번</title>
+
+    <style>
+        /* 주로 설정하는 화면 크기 대충 기준
+        992px 이상 - 고해상도 컴퓨터
+        768px 이상 - 랩탑
+        768px 이하 576px 이상 - 태블릿
+        576px 이하 - 스마트폰 화면
+         */
+        /* 화면 크기에 따라서 배경 색상 변경하기. */
+
+        body{
+            background-color:lightblue;
+            color:black;
+        }
+
+        @media screen and (max-width:992px){
+            body{
+                background-color:lightseagreen;
+            }
+        }
+
+        @media screen and (max-width:768px){
+            /* 태블릿 */
+            body{
+                background-color:pink;
+            }
+
+        }
+        @media screen and (max-width:576px){
+            /* 스마트폰 */
+            body{
+                background-color:coral;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <h1>화면 너비에 따라 배경 색상 변경하기.</h1>
+    <p>992px 이상 -> 고해상도 컴퓨터 화면</p>
+    <p>768px 이상 -> 랩탑 화면</p>
+    <p>768px 이하 -> 태블릿 화면</p>
+    <p>576px 이하 -> only 스마트폰 화면</p>
+</body>
+</html>
